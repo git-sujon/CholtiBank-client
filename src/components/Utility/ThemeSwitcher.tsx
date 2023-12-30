@@ -24,7 +24,7 @@ export function ThemeSwitcher() {
         isIconOnly
         aria-label="Light theme"
       >
-        <CiLight  className="text-4xl" />
+        <CiLight className="text-4xl" />
       </Button>
       <Button
         onClick={() => setTheme("dark")}
@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
         isIconOnly
         aria-label="Dark theme"
       >
-        <MdDarkMode  className="text-4xl" />
+        <MdDarkMode className="text-4xl" />
       </Button>
     </div>
   );
