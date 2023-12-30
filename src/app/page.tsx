@@ -1,18 +1,13 @@
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Button } from "@nextui-org/react";
 
 const HomePage = () => {
-    return (
-        <div>
-             <div className="flex gap-4">
-      <Button variant="bordered" radius="md">
-        Button
-      </Button>
-      <Button isDisabled color="primary" radius="md">
-        Disabled
-      </Button>
+  return (
+    <div>
+      <ThemeSwitcher />
+      <p className="text-5xl">Test</p>
     </div>
-        </div>
-    );
+  );
 };
 
 export default HomePage;
