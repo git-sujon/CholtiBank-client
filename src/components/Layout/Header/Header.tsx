@@ -61,30 +61,38 @@ const Header = () => {
 
       {/* Menus */}
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-4 " justify="start">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link
+            className="text-CText hover:text-CPrimary font-semibold"
+            href="/invest"
+          >
             Invest
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" aria-current="page">
+          <Link
+            className="text-CText hover:text-CPrimary font-semibold"
+            href="/loan"
+            aria-current="true"
+          >
             Loan
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link
+            className="text-CText hover:text-CPrimary font-semibold"
+            href="/payments"
+          >
             Payments
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
+        <NavbarItem></NavbarItem>
         <NavbarItem>
-          
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="success" href="#" variant="bordered">
+          <Button as={Link} color="warning" href="#" variant="bordered">
             My Account
           </Button>
         </NavbarItem>
