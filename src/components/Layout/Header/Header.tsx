@@ -96,7 +96,7 @@ const Header = () => {
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="bordered">
+          <Button as={Link} color="primary" href="/login" variant="bordered">
             My Account
           </Button>
         </NavbarItem>

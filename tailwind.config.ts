@@ -13,7 +13,7 @@ module.exports = {
   // theme: {
   //   extend: {},
   //   colors: {
-  //     CPrimary: ' #FFB300',
+  //     CPrimary: ' #ff9100',
   //     CSecondary: '#04185C',
   //     CText:'#333333',
   //     CError: '#ea4335',
@@ -29,11 +29,12 @@ module.exports = {
   important: true,
   plugins: [
     nextui({
+      addCommonColors: true,
       themes: {
         light: {
           colors: {
             primary: {
-              DEFAULT: "#FFB300",
+              DEFAULT: "#ff9100",
               foreground: "#333333",
             },
             secondary: {
@@ -44,7 +45,7 @@ module.exports = {
         },
         dark: {
           primary: {
-            DEFAULT: "#FFB300",
+            DEFAULT: "#ff9100",
             foreground: "#FFFFFF",
           },
         },

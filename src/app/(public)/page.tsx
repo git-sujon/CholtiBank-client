@@ -1,10 +1,11 @@
 import Header from "@/components/Layout/Header/Header";
+import HeroBanner from "@/components/Pages/Home/HeroBanner/HeroBanner";
 
 const HomePage = () => {
   return (
     <>
       <Header />
-      <p className="text-5xl">Test</p>
+      <HeroBanner />
     </>
   );
 };
