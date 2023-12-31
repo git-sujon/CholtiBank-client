@@ -14,6 +14,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -25,14 +26,15 @@ const Header = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-slate-800"
+      className=""
       maxWidth="2xl"
     >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
-          <MdMenu className="text-red-900" />
-        </NavbarMenuToggle>
-        <MdMenu />
+      <NavbarContent className="block sm:hidden" justify="start">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+          icon={<MdMenu className="text-CSecondary size-12" />}
+        ></NavbarMenuToggle>
       </NavbarContent>
       {/* Mobile screen logo */}
       <NavbarContent className="sm:hidden pr-3" justify="center">
@@ -64,7 +66,7 @@ const Header = () => {
       <NavbarContent className="hidden sm:flex gap-4 " justify="start">
         <NavbarItem>
           <Link
-            className="text-CText hover:text-CPrimary font-semibold"
+            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
             href="/invest"
           >
             Invest
@@ -72,7 +74,7 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-CText hover:text-CPrimary font-semibold"
+            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
             href="/loan"
             aria-current="true"
           >
@@ -81,7 +83,7 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-CText hover:text-CPrimary font-semibold"
+            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
             href="/payments"
           >
             Payments
@@ -90,7 +92,9 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem></NavbarItem>
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="warning" href="#" variant="bordered">
             My Account
