@@ -4,7 +4,7 @@ const ImagePartWhyChooseUs = () => {
   return (
     <div>
       <Image
-        src="/homePage/why-Choose-Us.jpg"
+        src="/homePage/man-with-phone.jpg"
         width={600}
         height={700}
         alt="Why you choose us"

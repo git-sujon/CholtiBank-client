@@ -15,7 +15,7 @@ import { CiLock } from "react-icons/ci";
 
 const SwiperImages = () => {
   return (
-    <div className="mt-10 lg:mt-0">
+    <div className="mt-10 lg:mt-0 max-w-sm">
       <Swiper
         effect={"cards"}
         grabCursor={true}
