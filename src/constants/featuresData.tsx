@@ -45,7 +45,7 @@ export const featuresData = [
   },
   {
     id: 7,
-    title: "Instant Customer Support",
+    title: "Customer Support",
     description:
       "Experience prompt assistance with our instant customer support. Whether you have inquiries or need assistance, our dedicated support team is just a click away, ensuring a seamless and responsive customer service experience.",
     icon: <MdPeople className="size-10" />,

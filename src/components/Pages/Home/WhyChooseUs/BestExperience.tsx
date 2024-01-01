@@ -16,7 +16,7 @@ const BestExperience = () => {
         We Commit To Give You The <br />{" "}
         <span className="text-primary">Best Experience</span>
       </h1>
-      <p className="leading-relaxed  text-slate-600 text-justify">
+      <p className="leading-relaxed  text-slate-600 text-justify dark:text-slate-50">
         {
           "At Cholti Bank, we are committed to delivering an unparalleled experience. Our choice to prioritize excellence reflects in our innovative solutions, reliability, and customer-centric approach."
         }
