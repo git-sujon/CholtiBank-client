@@ -1,7 +1,13 @@
 import React from "react";
+
 import { FaRegCreditCard } from "react-icons/fa";
 import { FiCreditCard } from "react-icons/fi";
-import { FaRegCreditCard as FaRegCreditCard6 } from "react-icons/fa6";
+import { FaCreditCard } from "react-icons/fa";
+import { FaCcMastercard } from "react-icons/fa";
+import { FaCcVisa } from "react-icons/fa6";
+import { Button } from "@nextui-org/react";
+import { MdOutlineMore } from "react-icons/md";
+
 const CardBenefits = () => {
   return (
     <div>
@@ -16,7 +22,7 @@ const CardBenefits = () => {
         }
       </p>
 
-      <div className="space-y-3 mt-3 ml-10">
+      <div className="space-y-3 my-3">
         <div className="flex items-center gap-x-4 mb-2">
           <FiCreditCard className="text-2xl text-secondary" />
           <p className="font-semibold">Cholti Plus</p>
@@ -26,10 +32,30 @@ const CardBenefits = () => {
           <p className="font-semibold">Cholti Gold</p>
         </div>
         <div className="flex items-center gap-x-4 mb-2">
-          <FaRegCreditCard6 className="text-2xl text-green-600" />
+          <FaCreditCard className="text-2xl text-green-600" />
           <p className="font-semibold">Cholti Premium</p>
         </div>
+        <div className="flex items-center gap-x-4 mb-2">
+          <FaCcVisa className="text-2xl text-blue-600" />
+          <p className="font-semibold">Visa Card</p>
+        </div>
+        <div className="flex items-center gap-x-4 mb-2">
+          <FaCcMastercard className="text-2xl text-rose-600" />
+          <p className="font-semibold">Master Card</p>
+        </div>
       </div>
+
+      <Button
+        endContent={
+          <MdOutlineMore className="text-xl text-secondary" />
+        }
+        size="md"
+        variant="bordered"
+        color="secondary"
+        className=""
+      >
+        Learn More{" "}
+      </Button>
     </div>
   );
 };

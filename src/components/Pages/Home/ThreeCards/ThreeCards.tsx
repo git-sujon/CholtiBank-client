@@ -13,6 +13,7 @@ const ThreeCards = () => {
           alt="Download CholtiBank App"
         />
       </div>
+    
     </div>
   );
 };
