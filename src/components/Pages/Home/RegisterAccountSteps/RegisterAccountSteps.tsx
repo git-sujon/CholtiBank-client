@@ -13,7 +13,10 @@ const RegisterAccountSteps = () => {
         {registrationStepsData.map((step) => (
           <Card
             key={step.stepNo}
-            className="p-6 bg-white rounded-md shadow-md border border-slate-300"
+            shadow={"md"}
+            radius={"lg"}
+            isHoverable={true}
+            className="p-6 rounded-md  border border-slate-300 hover:border-primary  transition-transform transform hover:scale-105"
           >
             <div className="flex items-center justify-center mb-4  text-7xl">
               {step.icon}
@@ -21,7 +24,7 @@ const RegisterAccountSteps = () => {
             <div className="text-xl font-bold mb-2 text-center">
               {step.stepName}
             </div>
-            <div className="text-sm text-gray-900 text-center">
+            <div className="text-sm text-gray-900 dark:text-gray-50 text-center">
               {step.description}
             </div>
           </Card>

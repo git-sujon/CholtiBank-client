@@ -4,7 +4,7 @@ const FeatureCard = ({ feature }: { feature: any }) => {
   const { title, description, icon } = feature;
   return (
     <div>
-      <Card className="bg-white shadow-lg p-2  transition-transform transform hover:scale-105">
+      <Card className=" shadow-lg p-2  transition-transform transform hover:scale-105 hover:border-primary">
         <CardHeader className="flex items-center justify-center text-secondary">
           {icon}
         </CardHeader>
