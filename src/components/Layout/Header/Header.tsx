@@ -19,7 +19,29 @@ import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Profile", "Dashboard", "Activity"];
+  const menuItems = [
+    {
+      id: "1",
+      title: "Invest",
+      href: "/invest",
+    },
+
+    {
+      id: "2",
+      title: "Loan",
+      href: "/loan",
+    },
+    {
+      id: "3",
+      title: "Payments",
+      href: "/payments",
+    },
+    {
+      id: "4",
+      title: "My Account",
+      href: "/login",
+    },
+  ];
 
   return (
     <Navbar
@@ -103,22 +125,26 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={item.id}>
+            {item.id === "4" ? (
+              <Button
+                as={Link}
+                color="primary"
+                href="/login"
+                variant="bordered"
+              >
+                My Account
+              </Button>
+            ) : (
+              <Link
+                className="text-slate-800 dark:text-white hover:text-primary font-semibold"
+                href={item.href}
+                size="lg"
+              >
+                {item.title}
+              </Link>
+            )}
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
