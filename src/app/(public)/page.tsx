@@ -15,8 +15,8 @@ const HomePage = () => {
       <Header />
       <HeroBanner />
       <WhyChooseUs />
-      <ManageMoney />
       <Features />
+      <ManageMoney />
       <CurrencySupport />
       <ThreeCards />
       <RegisterAccountSteps />
