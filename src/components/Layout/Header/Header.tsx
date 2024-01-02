@@ -22,22 +22,27 @@ const Header = () => {
   const menuItems = [
     {
       id: "1",
+      title: "Home",
+      href: "/",
+    },
+    {
+      id: "2",
       title: "Invest",
       href: "/invest",
     },
 
     {
-      id: "2",
+      id: "3",
       title: "Loan",
       href: "/loan",
     },
     {
-      id: "3",
+      id: "4",
       title: "Payments",
       href: "/payments",
     },
     {
-      id: "4",
+      id: "5",
       title: "My Account",
       href: "/login",
     },
@@ -86,31 +91,20 @@ const Header = () => {
       {/* Menus */}
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="start">
-        <NavbarItem>
-          <Link
-            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
-            href="/invest"
-          >
-            Invest
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
-            href="/loan"
-            aria-current="true"
-          >
-            Loan
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            className="text-slate-800 dark:text-white hover:text-primary font-semibold"
-            href="/payments"
-          >
-            Payments
-          </Link>
-        </NavbarItem>
+        {menuItems.map((item) => (
+          <NavbarItem key={item.id}>
+            {item.href === "/login" ? (
+              ""
+            ) : (
+              <Link
+                className="text-slate-800 dark:text-white hover:text-primary font-semibold"
+                href={item.href}
+              >
+                {item.title}
+              </Link>
+            )}
+          </NavbarItem>
+        ))}
       </NavbarContent>
 
       <NavbarContent justify="end">
@@ -127,7 +121,7 @@ const Header = () => {
       <NavbarMenu>
         {menuItems.map((item) => (
           <NavbarMenuItem key={item.id}>
-            {item.id === "4" ? (
+            {item.href === "/login" ? (
               <Button
                 as={Link}
                 color="primary"
@@ -138,7 +132,7 @@ const Header = () => {
               </Button>
             ) : (
               <Link
-                className="text-slate-800 dark:text-white hover:text-primary font-semibold"
+                className="text-slate-800 dark:text-white hover:text-primary"
                 href={item.href}
                 size="lg"
               >
