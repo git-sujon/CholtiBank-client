@@ -6,6 +6,7 @@ import Features from "@/components/Pages/Home/Features/Features";
 import HeroBanner from "@/components/Pages/Home/HeroBanner/HeroBanner";
 import ManageMoney from "@/components/Pages/Home/ManageMoney/ManageMoney";
 import RegisterAccountSteps from "@/components/Pages/Home/RegisterAccountSteps/RegisterAccountSteps";
+import ThreeCards from "@/components/Pages/Home/ThreeCards/ThreeCards";
 import WhyChooseUs from "@/components/Pages/Home/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
@@ -17,8 +18,9 @@ const HomePage = () => {
       <ManageMoney />
       <Features />
       <CurrencySupport />
-      <DownloadApp />
+      <ThreeCards />
       <RegisterAccountSteps />
+      <DownloadApp />
       <FAQ />
     </>
   );

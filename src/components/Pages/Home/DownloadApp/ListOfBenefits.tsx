@@ -1,4 +1,4 @@
-import { appBenefits } from "@/constants/AppBenefits";
+import { appBenefits } from "@/constants/appBenefits";
 import React from "react";
 
 const ListOfBenefits = () => {

@@ -12,7 +12,7 @@ const BestExperience = () => {
       >
         Why Choose Us
       </Button>
-      <h1 className="text-3xl md:text-4xl  font-black  ">
+      <h1 className="text-3xl md:text-4xl  font-black uppercase ">
         We Commit To Give You The <br />{" "}
         <span className="text-primary">Best Experience</span>
       </h1>
