@@ -1,4 +1,5 @@
 import Header from "@/components/Layout/Header/Header";
+import CurrencySupport from "@/components/Pages/Home/CurrencySupport/CurrencySupport";
 import DownloadApp from "@/components/Pages/Home/DownloadApp/DownloadApp";
 import Features from "@/components/Pages/Home/Features/Features";
 import HeroBanner from "@/components/Pages/Home/HeroBanner/HeroBanner";
@@ -14,6 +15,7 @@ const HomePage = () => {
       <ManageMoney />
       <Features />
       <DownloadApp />
+      <CurrencySupport />
     </>
   );
 };
