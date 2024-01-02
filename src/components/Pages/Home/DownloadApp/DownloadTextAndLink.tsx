@@ -8,7 +8,7 @@ const DownloadTextAndLink = () => {
         <br /> Download Our <span className="text-primary">App</span>
         <br />{" "}
       </h1>
-      <p className="leading-relaxed  text-slate-600 text-justify max-w-md dark:text-slate-50">
+      <p className="leading-relaxed  text-slate-900 text-justify max-w-md dark:text-slate-50">
         {
           "Take control of your finances effortlessly – download our app today for a seamless and empowered banking experience!"
         }

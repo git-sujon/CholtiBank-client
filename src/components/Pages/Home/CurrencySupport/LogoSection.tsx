@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 const CurrencyCard = () => {
   return (
     <div className="">
-      <Marquee className="" speed={30} >
+      <Marquee className="" speed={30}>
         {currencyInfo.map((currency) => (
           <Card
             key={currency.id}

@@ -14,8 +14,8 @@ const HomePage = () => {
       <WhyChooseUs />
       <ManageMoney />
       <Features />
-      <DownloadApp />
       <CurrencySupport />
+      <DownloadApp />
     </>
   );
 };
