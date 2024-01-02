@@ -1,0 +1,34 @@
+import { registrationStepsData } from "@/constants/registerAccount";
+import { Card } from "@nextui-org/react";
+
+const RegisterAccountSteps = () => {
+  return (
+    <div className="pt-20 mx-auto max-w-screen-2xl px-4 lg:px-16 ">
+      <h1 className="text-3xl md:text-4xl  font-black   text-center uppercase">
+        Instant Banking Experience
+        <br />
+        <span className="text-primary">Join Us in a Minute</span>
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-10">
+        {registrationStepsData.map((step) => (
+          <Card
+            key={step.stepNo}
+            className="p-6 bg-white rounded-md shadow-md border border-slate-300"
+          >
+            <div className="flex items-center justify-center mb-4  text-7xl">
+              {step.icon}
+            </div>
+            <div className="text-xl font-bold mb-2 text-center">
+              {step.stepName}
+            </div>
+            <div className="text-sm text-gray-900 text-center">
+              {step.description}
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default RegisterAccountSteps;
