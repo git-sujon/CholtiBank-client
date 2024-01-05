@@ -10,27 +10,46 @@ import { BiSolidLogIn } from "react-icons/bi";
 import ReusableInputForLogin from "@/components/Forms/ReusableInputForLogin";
 import Link from "next/link";
 import { useUserLoginMutation } from "@/redux/api/authApi";
+import LoadingPage from "@/app/loading";
+import { IJwtDecoded } from "@/types/user";
+import { getUserInfo, storeUserInfo } from "@/services/auth.services";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 const Login = () => {
   const [userLogin, { isLoading }] = useUserLoginMutation();
   const [isVisible, setIsVisible] = useState(false);
-
+  const router = useRouter();
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const loginHandler = async (e: any) => {
     e.preventDefault();
     const phoneNumber = e.target.phone.value;
     const password = e.target.password.value;
-
     const data = {
       phoneNumber,
       password,
     };
 
-    const response = await userLogin(data).unwrap();
+    try {
+      const response = await userLogin(data).unwrap();
+      if (response?.data) {
+        storeUserInfo(response?.data);
+        toast.success(`${response?.message}`);
+        if (isLoading) {
+          return <LoadingPage />;
+        }
+        const { role } = getUserInfo() as IJwtDecoded;
 
-    console.log("response:", response);
-
-    console.log("response:", response);
+        // router.push(`/${role}`);
+      }
+    } catch (error: any) {
+      if (error?.data?.message) {
+        setErrorMessage(error?.data?.message);
+        // toast.error(error?.data?.message);
+      }
+    }
   };
 
   return (
@@ -49,6 +68,8 @@ const Login = () => {
           startContent={
             <MdPhonelinkLock className="text-lg text-default-400  flex-shrink-0" />
           }
+          isRequired={true}
+          isInvalid={errorMessage ? true : false}
         />
 
         <ReusableInputForLogin
@@ -72,6 +93,9 @@ const Login = () => {
           startContent={
             <TbPasswordFingerprint className="text-lg text-default-400 " />
           }
+          isRequired={true}
+          isInvalid={errorMessage ? true : false}
+          errorMessage={errorMessage}
         />
         <Button
           type="submit"

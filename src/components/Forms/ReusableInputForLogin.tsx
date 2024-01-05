@@ -12,6 +12,7 @@ interface ReusableInputForLoginProps {
   isInvalid?: boolean;
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
+  errorMessage?:string
 }
 
 const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
@@ -23,6 +24,7 @@ const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
   isInvalid = false,
   startContent,
   endContent,
+  errorMessage
 }) => {
   return (
     <Input
@@ -37,6 +39,7 @@ const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
       type={type}
       startContent={startContent}
       endContent={endContent}
+      errorMessage={errorMessage}
       classNames={{
         mainWrapper: "rounded-none",
         innerWrapper: "rounded-none",

@@ -10,6 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <Provider store={store}>
       <NextUIProvider>
         <NextThemesProvider attribute="class" defaultTheme="dark">
+          
           {children}
         </NextThemesProvider>
       </NextUIProvider>
