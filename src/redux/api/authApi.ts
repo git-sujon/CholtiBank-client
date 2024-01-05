@@ -11,7 +11,7 @@ export const authApi = baseApi.injectEndpoints({
         method: "POST",
         data: data,
       }),
-      invalidatesTags: [tagTypes.auth, tagTypes.carts],
+      invalidatesTags: [tagTypes.auth],
     }),
 
     userSignUp: build.mutation({
