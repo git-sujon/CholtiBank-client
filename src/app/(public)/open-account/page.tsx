@@ -6,6 +6,10 @@ import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
 const OpenAccountPage = () => {
+
+  
+
+
   return (
     <div className=" max-w-xs sm:max-w-md mx-auto px-4">
       <div className=" mt-10 lg:mt-16  border-2 border-slate-500 min-h-fit ">

@@ -10,13 +10,23 @@ import { IoEyeOffSharp } from "react-icons/io5";
 import { GiBleedingEye } from "react-icons/gi";
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
+import { useUserSignUpMutation } from "@/redux/api/authApi";
+import { useRouter } from "next/navigation";
+import LoadingPage from "@/app/loading";
+import { getUserInfo, storeUserInfo } from "@/services/auth.services";
+import toast from "react-hot-toast";
+import { IJwtDecoded } from "@/types/user";
 const OpenAccount = () => {
+  const [userSignUp, { isLoading }] = useUserSignUpMutation();
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isVisiblePin, setIsVisiblePin] = useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
   const toggleVisibilityPin = () => setIsVisiblePin(!isVisiblePin);
-  const signUpHandler = (event: any) => {
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const signUpHandler = async (event: any) => {
     event.preventDefault();
     const firstName = event.target.firstName.value;
     const lastName = event.target.lastName.value;
@@ -25,6 +35,36 @@ const OpenAccount = () => {
     const password = event.target.password.value;
     const pin = event.target.pin.value;
     console.log(firstName, lastName, nationalId, phoneNumber, password, pin);
+
+    const data = {
+      firstName,
+      lastName,
+      nationalId,
+      phoneNumber,
+      password,
+      pin,
+    };
+
+    try {
+      const response = await userSignUp(data).unwrap();
+      if (response?.data) {
+        storeUserInfo(response?.data);
+        toast.success(`${response?.message}`);
+        if (isLoading) {
+          return <LoadingPage />;
+        }
+        const { role } = getUserInfo() as IJwtDecoded;
+
+        // router.push(`/${role}`);
+      }
+    } catch (error: any) {
+      console.log("error:", error);
+
+      if (error?.data?.message) {
+        setErrorMessage(error?.data?.message);
+        // toast.error(error?.data?.message);
+      }
+    }
   };
 
   return (
@@ -43,6 +83,8 @@ const OpenAccount = () => {
         startContent={
           <FaUserTie className="text-lg text-default-400  flex-shrink-0" />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
       />
 
       <ReusableInput
@@ -53,6 +95,8 @@ const OpenAccount = () => {
         startContent={
           <FaRegUser className="text-lg text-default-400  flex-shrink-0" />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
       />
 
       <ReusableInput
@@ -63,6 +107,8 @@ const OpenAccount = () => {
         startContent={
           <FaIdCard className="text-lg text-default-400  flex-shrink-0" />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
       />
 
       <ReusableInput
@@ -73,6 +119,8 @@ const OpenAccount = () => {
         startContent={
           <MdPhonelinkLock className="text-lg text-default-400  flex-shrink-0" />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
       />
 
       <ReusableInput
@@ -96,6 +144,8 @@ const OpenAccount = () => {
         startContent={
           <TbPasswordFingerprint className="text-lg text-default-400 " />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
       />
 
       <ReusableInput
@@ -119,6 +169,9 @@ const OpenAccount = () => {
         startContent={
           <TbPasswordUser className="text-lg text-default-400  flex-shrink-0" />
         }
+        isRequired={true}
+        isInvalid={errorMessage ? true : false}
+        errorMessage={errorMessage}
       />
 
       <Button
