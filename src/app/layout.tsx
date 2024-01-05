@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/lib/Providers";
+import Header from "@/components/Layout/Header/Header";
 
 export const metadata: Metadata = {
   title: "CholtiBank",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers> {children}</Providers>
       </body>
     </html>
   );
