@@ -3,7 +3,7 @@ import { GiBleedingEye } from "react-icons/gi";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { TbPasswordFingerprint } from "react-icons/tb";
 
-interface ReusableInputForLoginProps {
+interface ReusableInputProps {
   label: string;
   name: string;
   placeholder: string;
@@ -15,7 +15,7 @@ interface ReusableInputForLoginProps {
   errorMessage?:string
 }
 
-const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
+const ReusableInput: React.FC<ReusableInputProps> = ({
   label,
   name,
   placeholder,
@@ -49,4 +49,4 @@ const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
   );
 };
 
-export default ReusableInputForLogin;
+export default ReusableInput;

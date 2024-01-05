@@ -7,7 +7,7 @@ import { useState } from "react";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import { MdPhonelinkLock } from "react-icons/md";
 import { BiSolidLogIn } from "react-icons/bi";
-import ReusableInputForLogin from "@/components/Forms/ReusableInputForLogin";
+
 import Link from "next/link";
 import { useUserLoginMutation } from "@/redux/api/authApi";
 import LoadingPage from "@/app/loading";
@@ -15,6 +15,7 @@ import { IJwtDecoded } from "@/types/user";
 import { getUserInfo, storeUserInfo } from "@/services/auth.services";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import ReusableInput from "@/components/Forms/ReusableInput";
 const Login = () => {
   const [userLogin, { isLoading }] = useUserLoginMutation();
   const [isVisible, setIsVisible] = useState(false);
@@ -60,7 +61,7 @@ const Login = () => {
             Login
           </h1>
         </div>
-        <ReusableInputForLogin
+        <ReusableInput
           label="Phone"
           name="phone"
           placeholder="01XXXXXXXXX"
@@ -72,7 +73,7 @@ const Login = () => {
           isInvalid={errorMessage ? true : false}
         />
 
-        <ReusableInputForLogin
+        <ReusableInput
           label="Password"
           name="password"
           placeholder="********"

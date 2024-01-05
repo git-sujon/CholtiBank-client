@@ -1,6 +1,10 @@
 import { Spinner } from "@nextui-org/react";
 const LoadingPage = () => {
-  return <Spinner />;
+  return (
+    <div className="flex justify-center items-center max-h-svh">
+      <Spinner color="success" size="lg" />
+    </div>
+  );
 };
 
 export default LoadingPage;
