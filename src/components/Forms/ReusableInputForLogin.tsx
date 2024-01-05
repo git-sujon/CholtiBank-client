@@ -26,7 +26,7 @@ const ReusableInputForLogin: React.FC<ReusableInputForLoginProps> = ({
 }) => {
   return (
     <Input
-      className="max-w-sm"
+      className="w-full"
       isRequired={isRequired}
       size="sm"
       label={label}

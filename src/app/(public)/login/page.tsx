@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Divider, Input } from "@nextui-org/react";
+import { Button, Card, Divider, Input } from "@nextui-org/react";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { GiBleedingEye } from "react-icons/gi";
 import { useState } from "react";
@@ -9,6 +9,7 @@ import { MdPhonelinkLock } from "react-icons/md";
 import { BiSolidLogIn } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import ReusableInputForLogin from "@/components/Forms/ReusableInputForLogin";
+import Link from "next/link";
 const LoginPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -22,20 +23,23 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex justify-center ">
-      <div className=" mt-20 lg:mt-32 border border-slate-900 min-h-fit">
+    <div className=" max-w-xs sm:max-w-md mx-auto px-4">
+      <div className=" mt-10 lg:mt-16  border-2 border-slate-500 min-h-fit ">
         <div className=" flex justify-between items-center px-5 py-3">
           <h1 className="text-primary text-2xl font-bold ">CholtiBank</h1>
-          <Button
-            isIconOnly
-            startContent={<FaHome className="text-3xl text-secondary" />}
-            href="/"
-            variant="faded"
-          />
-        </div>
-        <Divider className="bg-slate-900" />
 
-        <form onSubmit={loginHandler} className="flex flex-col gap-y-2 p-5 ">
+          <Link href={"/"}>
+            {" "}
+            <Button
+              isIconOnly
+              startContent={<FaHome className="text-3xl text-secondary" />}
+              variant="faded"
+            ></Button>
+          </Link>
+        </div>
+        <Divider className="bg-slate-500  pb-0.5" />
+
+        <form onSubmit={loginHandler} className="flex flex-col gap-y-2 p-5">
           <div className=" mb-2">
             <h1 className="text-secondary text-xl font-bold text-center">
               Login
@@ -47,7 +51,7 @@ const LoginPage = () => {
             placeholder="01XXXXXXXXX"
             type={"text"}
             startContent={
-              <MdPhonelinkLock className="text-lg text-default-400 pointer-events-none flex-shrink-0" />
+              <MdPhonelinkLock className="text-lg text-default-400  flex-shrink-0" />
             }
           />
 
@@ -62,20 +66,20 @@ const LoginPage = () => {
                 onClick={toggleVisibility}
               >
                 {isVisible ? (
-                  <GiBleedingEye className="text-lg text-default-400 pointer-events-none" />
+                  <GiBleedingEye className="text-lg text-default-400 " />
                 ) : (
-                  <IoEyeOffSharp className="text-lg text-default-400 pointer-events-none" />
+                  <IoEyeOffSharp className="text-lg text-default-400 " />
                 )}
               </button>
             }
             type={isVisible ? "text" : "password"}
             startContent={
-              <TbPasswordFingerprint className="text-lg text-default-400 pointer-events-none flex-shrink-0" />
+              <TbPasswordFingerprint className="text-lg text-default-400 " />
             }
           />
           <Button
             type="submit"
-            className="text-white"
+            className="text-white w-full"
             color="secondary"
             startContent={<BiSolidLogIn className="text-lg " />}
             fullWidth={true}
@@ -84,6 +88,14 @@ const LoginPage = () => {
             Login
           </Button>
         </form>
+        <div className="my-2">
+          <p className="text-center text-slate-500 text-wrap">
+            {" Don't have an account? "}
+            <Link href={"/open-account"} className="text-secondary font-bold">
+              Open an Account
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
