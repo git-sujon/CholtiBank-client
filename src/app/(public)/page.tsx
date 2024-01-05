@@ -13,7 +13,6 @@ import WhyChooseUs from "@/components/Pages/Home/WhyChooseUs/WhyChooseUs";
 const HomePage = () => {
   return (
     <>
-      <Header />
       <HeroBanner />
       <WhyChooseUs />
       <Features />
@@ -23,7 +22,7 @@ const HomePage = () => {
       <RegisterAccountSteps />
       <DownloadApp />
       <FAQ />
-      <Footer />
+
     </>
   );
 };
