@@ -9,8 +9,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
       <NextUIProvider>
-        <NextThemesProvider attribute="class" defaultTheme="dark">
-          
+        <NextThemesProvider attribute="class" defaultTheme="light">
           {children}
         </NextThemesProvider>
       </NextUIProvider>
