@@ -1,6 +1,5 @@
 
 import React from "react";
-import { useSidebarContext } from "@/layout/layout-context";
 import { clsx } from 'clsx';
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/hooks";

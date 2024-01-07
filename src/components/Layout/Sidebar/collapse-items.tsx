@@ -10,7 +10,7 @@ interface Props {
   items: {
     icon: React.ReactNode;
     title: string;
-    href: string;
+    path: string;
   }[];
 }
 
@@ -42,7 +42,7 @@ export const CollapseItems = ({ icon, items, title }: Props) => {
             {items.map((item, index) => (
               <Link 
                 key={index}
-                href={item.href}
+                href={item.path}
                 className="w-full flex font-semibold  text-default-700 hover:text-default-900 transition-colors gap-x-1"
               >
                 {item?.icon}
