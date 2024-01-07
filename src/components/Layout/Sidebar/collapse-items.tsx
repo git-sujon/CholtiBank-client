@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaChevronCircleDown } from "react-icons/fa";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import Link from "next/link";
 
 interface Props {
   icon: React.ReactNode;
@@ -9,6 +10,7 @@ interface Props {
   items: {
     icon: React.ReactNode;
     title: string;
+    href: string;
   }[];
 }
 
@@ -30,21 +32,22 @@ export const CollapseItems = ({ icon, items, title }: Props) => {
           }}
           aria-label="Accordion 1"
           title={
-            <div className="flex flex-row gap-2">
-              <span>{icon}</span>
-              <span>{title}</span>
+            <div className="flex flex-row gap-2 items-center">
+              <p className="text-xl">{icon}</p>
+              <p>{title}</p>
             </div>
           }
         >
           <div className="pl-12">
             {items.map((item, index) => (
-              <div
+              <Link 
                 key={index}
-                className="w-full flex  text-default-700 hover:text-default-900 transition-colors gap-x-1"
+                href={item.href}
+                className="w-full flex font-semibold  text-default-700 hover:text-default-900 transition-colors gap-x-1"
               >
                 {item?.icon}
                 {item?.title}
-              </div>
+              </Link>
             ))}
           </div>
         </AccordionItem>

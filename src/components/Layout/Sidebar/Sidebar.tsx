@@ -3,7 +3,6 @@ import React from "react";
 import { Sidebar } from "./sidebar.styles";
 import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
-import { useSidebarContext } from "@/layout/layout-context";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { RiHomeOfficeFill } from "react-icons/ri";
@@ -12,15 +11,24 @@ import { AiOutlineTransaction } from "react-icons/ai";
 import { FaRegCreditCard } from "react-icons/fa";
 import { RiBriefcase4Fill } from "react-icons/ri";
 import { CiCreditCard1 } from "react-icons/ci";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setCollapsed } from "@/redux/slices/sidebarSlice";
 export const SidebarWrapper = () => {
   const router = useRouter();
-  const { collapsed, setCollapsed } = useSidebarContext();
-  const pathname = usePathname()
+  const dispatch = useAppDispatch();
+  const collapsed = useAppSelector((state) => state.sidebar.collapsed);
+  const pathname = usePathname();
+
+
+  const handleOverlayClick = () => {
+    dispatch(setCollapsed());
+  };
+
   return (
     <div className="">
       {collapsed ? (
-        <div className={Sidebar.Overlay()} onClick={setCollapsed} />
+        <div className={Sidebar.Overlay()} onClick={handleOverlayClick} />
       ) : null}
       <div
         className={Sidebar({
@@ -46,7 +54,7 @@ export const SidebarWrapper = () => {
             <SidebarItem
               title="Users"
               icon={<FaUsers />}
-              isActive={pathname === "/dashboard/users"}
+              isActive={pathname === "/dashboard/admin/users"}
               href="/dashboard/admin/users"
             />
             <SidebarItem
@@ -56,9 +64,9 @@ export const SidebarWrapper = () => {
             <CollapseItems
               icon={<FaRegCreditCard />}
               items={[
-                { icon: <CiCreditCard1 />, title: "Cholti Plus" },
-                { icon: <CiCreditCard1 />, title: "Cholti Gold" },
-                { icon: <CiCreditCard1 />, title: "Visa" },
+                { icon: <CiCreditCard1 />, title: "Cholti Plus", href: "#" },
+                { icon: <CiCreditCard1 />, title: "Cholti Gold", href: "#" },
+                { icon: <CiCreditCard1 />, title: "Visa", href: "#" },
               ]}
               title="Cards Issues"
             />

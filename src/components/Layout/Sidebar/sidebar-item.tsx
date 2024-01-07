@@ -3,6 +3,8 @@ import React from "react";
 import { useSidebarContext } from "@/layout/layout-context";
 import { clsx } from 'clsx';
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/hooks";
+import { setCollapsed } from "@/redux/slices/sidebarSlice";
 
 interface Props {
   title: string;
@@ -12,11 +14,11 @@ interface Props {
 }
 
 export const SidebarItem = ({ icon, title, isActive, href = "" }: Props) => {
-  const { collapsed, setCollapsed } = useSidebarContext();
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     if (window.innerWidth < 768) {
-      setCollapsed();
+      dispatch(setCollapsed());
     }
   };
   return (
@@ -27,14 +29,19 @@ export const SidebarItem = ({ icon, title, isActive, href = "" }: Props) => {
       <div
         className={clsx(
           isActive
-            ? "bg-primary"
+            ? "bg-secondary text-white"
             : "hover:bg-default-100",
-          "flex gap-2 w-full min-h-[44px] h-full items-center px-3.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]"
+          "flex gap-1 w-full min-h-[36px] h-full items-center text-lg px-3.5 rounded- cursor-pointer transition-all duration-150 active:scale-[0.98]"
         )}
         onClick={handleClick}
       >
         {icon}
-        <span className="text-default-900">{title}</span>
+        <span className={clsx(
+          isActive
+            ? "bg-secondary text-white"
+            : "hover:bg-default-100",
+          " cursor-pointer "
+        )}>{title}</span>
       </div>
     </Link>
   );

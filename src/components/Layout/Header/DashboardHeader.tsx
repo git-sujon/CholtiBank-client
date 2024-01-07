@@ -27,8 +27,12 @@ import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
 import notifications from "@/constants/notifications";
 import { formatTimestamp } from "@/utils/formatTimeStamp";
 import messages from "@/constants/message";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setCollapsed } from "@/redux/slices/sidebarSlice";
 const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const dispatch = useAppDispatch();
+  const { collapsed } = useAppSelector((state) => state.sidebar);
   const menuItems = [
     {
       id: "1",
@@ -41,7 +45,9 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const isInvisible = messageCount === 0; // Check if there are no messages
 
   const notificationCount = notifications?.length;
-
+  const handleOverlayClick = () => {
+    dispatch(setCollapsed()); // Dispatch the action to collapse the sidebar
+  };
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar
@@ -51,12 +57,16 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
         className=""
         maxWidth="2xl"
       >
-        <NavbarContent className="block sm:hidden" justify="start">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        <NavbarContent className="block sm:hidden m-0 p-0" justify="start">
+          {/* <NavbarItem> */}
+          <Button
             className="sm:hidden"
-            icon={<MdMenu className="text-CSecondary size-12" />}
-          ></NavbarMenuToggle>
+            isIconOnly
+            variant="light"
+            startContent={<MdMenu className="text-CSecondary text-2xl" />}
+            onClick={handleOverlayClick} // Click event to collapse the sidebar
+          ></Button>
+          {/* </NavbarItem> */}
         </NavbarContent>
         {/* Mobile screen logo */}
         <NavbarContent className="sm:hidden pr-3" justify="center">
@@ -71,8 +81,6 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
         </NavbarContent>
 
         {/* lg screen logo */}
-
-      
 
         <NavbarContent justify="end" className="m-0 p-0">
           <ButtonGroup size="lg">
@@ -161,7 +169,7 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
                   isBordered
                   as="button"
                   className="transition-transform"
-                  src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                  src="/user.jpg"
                 />
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
@@ -178,12 +186,6 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
             </Dropdown>
           </NavbarItem>
         </NavbarContent>
-
-        {/* <NavbarMenu>
-        {menuItems.map((item) => (
-          <NavbarMenuItem key={item.id}></NavbarMenuItem>
-        ))}
-      </NavbarMenu> */}
       </Navbar>
       {children}
     </div>
