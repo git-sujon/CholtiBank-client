@@ -1,18 +1,12 @@
-import { BalanceCard } from "@/components/Dashboard/UIElements/BalanceCard";
-
+import BalanceCardsHolder from "@/components/Dashboard/LandingPage/BalanceCardsHolder";
+import ProfileCard from "@/components/Dashboard/LandingPage/ProfileCard";
 const UserDashboard = () => {
   return (
-    <div className="min-h-svh p-2 lg:p-4">
-      <div className="grid grid-cols-2 gap-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <BalanceCard />
-          <BalanceCard />
-        </div>
+    <div className="min-h-svh p-4 lg:p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <BalanceCardsHolder />
 
-
-        <div>
-
-        </div>
+        <ProfileCard />
       </div>
     </div>
   );
