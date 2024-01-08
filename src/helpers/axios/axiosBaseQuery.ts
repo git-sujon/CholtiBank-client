@@ -3,7 +3,6 @@ import type { AxiosRequestConfig, AxiosError } from "axios";
 import { instance as axiosInstance } from "./axiosInstance";
 import { IMeta } from "@/types/common";
 
-
 export const axiosBaseQuery =
   (
     { baseUrl }: { baseUrl: string } = { baseUrl: "" }
@@ -20,8 +19,6 @@ export const axiosBaseQuery =
     unknown
   > =>
   async ({ url, method, data, params, contentType }) => {
-
-
     try {
       const result = await axiosInstance({
         url: baseUrl + url,
@@ -34,18 +31,13 @@ export const axiosBaseQuery =
         withCredentials: true,
       });
 
-      console.log("result:", result)
-
       return result;
     } catch (axiosError) {
-
-
-
       let error = axiosError as AxiosError;
       return {
         error: {
           status: error?.response?.status,
-          data: error?.response?.data || error?.message 
+          data: error?.response?.data || error?.message,
         },
       };
     }

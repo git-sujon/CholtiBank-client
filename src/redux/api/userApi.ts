@@ -5,17 +5,24 @@ const urlExtension = "/users";
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-  
-
     getMyProfile: build.query({
       query: (id) => ({
-        url: `${urlExtension}/${id}`,
+        url: `${urlExtension}/my-profile`,
         method: "GET",
       }),
 
       providesTags: [tagTypes.user],
     }),
+
+    updateMyProfile: build.mutation({
+      query: (id) => ({
+        url: `${urlExtension}/update-my-profile/${id}`,
+        method: "PATCH",
+      }),
+
+      invalidatesTags: [tagTypes.user],
+    }),
   }),
 });
 
-export const { useGetMyProfileQuery } = userApi;
+export const { useGetMyProfileQuery, useUpdateMyProfileMutation } = userApi;
