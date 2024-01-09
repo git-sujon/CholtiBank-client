@@ -2,15 +2,13 @@ export enum UserRole {
   user,
   admin,
   loan_officer,
-  customer_service_representative
+  customer_service_representative,
 }
 
 export enum AccountStatus {
   active,
-  inActive
+  inActive,
 }
-
-
 
 export enum TransactionTypeEnum {
   Deposit,
@@ -56,10 +54,9 @@ export enum MobileOperatorEnum {
   Teletalk,
 }
 
-
 export enum LoanStatus {
   PENDING,
   APPROVED,
   ACTIVE,
-  CLOSED
+  CLOSED,
 }

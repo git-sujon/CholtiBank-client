@@ -1,6 +1,7 @@
 // WithdrawMoney page
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
+import { WithdrawSourceEnum } from "@/constants/enums";
 import { FaUserTie, FaMoneyBillAlt } from "react-icons/fa";
 
 const WithdrawMoney = () => {
