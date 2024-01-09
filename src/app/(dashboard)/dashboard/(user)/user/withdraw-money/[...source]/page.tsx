@@ -1,14 +1,14 @@
 "use client"
 
-const DepositFormPage = ({ params }: { params: { source: string } }) => {
+const WithdrawMoneyFormPage = ({ params }: { params: { source: string } }) => {
 
     const source = params.source[0]
 
     return (
         <div>
-            DepositFormPage
+            WithdrawMoneyFormPage
         </div>
     );
 };
 
-export default DepositFormPage;
+export default WithdrawMoneyFormPage;
