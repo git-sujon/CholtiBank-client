@@ -1,5 +1,5 @@
 import { formatDate } from "@/helpers/formatDate";
-import { Avatar, Card } from "@nextui-org/react";
+import { Avatar, Button, Card } from "@nextui-org/react";
 import {
   FaBirthdayCake,
   FaMobileAlt,
@@ -7,6 +7,12 @@ import {
   FaUserAlt,
 } from "react-icons/fa";
 import { IoMdCalendar } from "react-icons/io";
+import { FaRegEnvelope } from "react-icons/fa";
+import { BsGenderMale } from "react-icons/bs";
+import { BsGenderFemale } from "react-icons/bs";
+import { PiOfficeChairBold } from "react-icons/pi";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
 
 const ProfileCard = ({ user }: { user: any }) => {
   const {
@@ -25,67 +31,85 @@ const ProfileCard = ({ user }: { user: any }) => {
     personalInfo || {};
 
   return (
-    <Card className=" bg-yellow-50 dark:bg-slate-900 dark:text-white shadow-md w-full  border border-primary hover:border-secondary   transition-transform transform hover:scale-105 flex items-center ">
-      <div className="mt-8">
-        <Avatar src="/user.jpg" className="w-20 h-20 text-large" />
-      </div>
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <FaUserAlt className="text-3xl text-primary mr-2" />
-            <div>
-              <p className="font-bold text-lg">{`${firstName || ""} ${
-                lastName || ""
-              }`}</p>
-              <p className="text-gray-500">Customer</p>
-            </div>
-          </div>
-          <IoMdCalendar className="text-gray-500" />
-          <p className="text-gray-500">
-            {createdAt ? formatDate(createdAt, "MMMM dd, yyyy") : ""}
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <div className="flex items-center mb-2">
-            <FaMobileAlt className="text-xl text-primary mr-2" />
-            <p className="text-gray-600">{phoneNumber || ""}</p>
-          </div>
-          <div className="flex items-center mb-2">
-            <FaBirthdayCake className="text-xl text-primary mr-2" />
-            <p className="text-gray-600">
-              {dateOfBirth ? formatDate(dateOfBirth, "MMMM dd, yyyy") : ""}
-            </p>
-          </div>
-          <div className="flex items-center mb-2">
-            <FaRegMoneyBillAlt className="text-xl text-primary mr-2" />
-            <p className="text-gray-600">
-              {`Account: ${accountNumber || ""} | Balance: ${
-                accountBalance || ""
-              } ${currency || ""}`}
-            </p>
-          </div>
-          <div className="flex items-center">
-            <FaMobileAlt className="text-xl text-primary mr-2" />
-            <p className="text-gray-600">{email || ""}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center">
-          <div className="flex items-center">
-            <div className="bg-primary text-white rounded-full p-2 mr-2">
+    <Card className=" bg-yellow-50 dark:bg-slate-900 dark:text-white shadow-md w-full  border border-primary hover:border-secondary   transition-transform transform hover:scale-105 p-4">
+      <div className="mt-4 flex items-center justify-center">
+        <div>
+          <Avatar src="/user.jpg" className="w-20 h-20 text-large" />
+          <div>
+            <p className="font-bold text-lg">{`${firstName || ""} ${
+              lastName || ""
+            }`}</p>
+            <p className="text-gray-500 text-center">
+              {" "}
               {accountType === "current" ? "Current" : "Savings"}
-            </div>
-            <p className="text-gray-600">{`Account Type`}</p>
+            </p>
           </div>
         </div>
-
-        <div className="mt-4">
-          <p className="text-gray-600">{`Gender: ${gender || ""}`}</p>
-          <p className="text-gray-600">{`Nationality: ${nationality || ""}`}</p>
-          <p className="text-gray-600">{`Occupation: ${occupation || ""}`}</p>
-        </div>
       </div>
+
+      <div className="flex items-center gap-x-1">
+        <FaRegMoneyBillAlt className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Account Number: </p>
+        <p className="text-gray-600">{accountNumber || ""}</p>
+      </div>
+
+      <div className="flex items-center  gap-x-1">
+        <IoMdCalendar className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Opening Date: </p>
+        <p className="">
+          {createdAt ? formatDate(createdAt, "MMMM dd, yyyy") : ""}
+        </p>
+      </div>
+
+      <div className="flex items-center gap-x-1">
+        <FaMobileAlt className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Phone Number: </p>
+        <p className="text-gray-600">{phoneNumber || ""}</p>
+      </div>
+
+      <div className="flex items-center gap-x-1">
+        <FaBirthdayCake className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Date of Birth: </p>
+        <p className="text-gray-600">
+          {dateOfBirth ? formatDate(dateOfBirth, "MMMM dd, yyyy") : ""}
+        </p>
+      </div>
+
+      <div className="flex items-center gap-x-1">
+        <FaRegEnvelope className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Email: </p>
+        <p className="text-gray-600">{email || ""}</p>
+      </div>
+
+      <div className="flex items-center gap-x-1">
+        {gender === "Female" ? (
+          <BsGenderFemale className="text-xl text-secondary mr-2" />
+        ) : (
+          <BsGenderMale className="text-xl text-secondary mr-2" />
+        )}
+
+        <p className="font-semibold">Gender: </p>
+        <p className="text-gray-600">{gender || ""}</p>
+      </div>
+
+      <div className="flex items-center gap-x-1">
+        <PiOfficeChairBold className="text-xl text-secondary mr-2" />
+        <p className="font-semibold">Occupation: </p>
+        <p className="text-gray-600">{occupation || ""}</p>
+      </div>
+      <Link
+        href={"/dashboard/user/profile"}
+        className="flex justify-center items-center mt-4"
+      >
+        <Button
+          variant="bordered"
+          color="secondary"
+          size="sm"
+          endContent={<FaExternalLinkAlt />}
+        >
+          View more
+        </Button>
+      </Link>
     </Card>
   );
 };

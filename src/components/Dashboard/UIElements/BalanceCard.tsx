@@ -38,7 +38,7 @@ export const BalanceCard = ({
   badgeIcon: React.ReactNode;
 }) => {
   return (
-    <Card className="xl:max-w-sm bg-yellow-50 dark:bg-slate-900 dark:text-white shadow-md w-full  border border-primary hover:border-secondary   transition-transform transform hover:scale-105">
+    <Card className="xl:max-w-sm max-h-36 bg-yellow-50 dark:bg-slate-900 dark:text-white shadow-md w-full  border border-primary hover:border-secondary   transition-transform transform hover:scale-105">
       <CardHeader className="flex items-center justify-between">
         {icon}
         <Chip
