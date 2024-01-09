@@ -37,6 +37,7 @@ const options: Props["options"] = {
   },
 
   xaxis: {
+    // type: "numeric",
     categories: [1, 2, 3, 4, 5, 6, 7],
     labels: {
       // show: false,

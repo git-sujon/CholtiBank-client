@@ -43,7 +43,7 @@ const Login = () => {
         }
         const { role } = getUserInfo() as IJwtDecoded;
 
-        // router.push(`/${role}`);
+        router.push(`/dashboard/${role}`);
       }
     } catch (error: any) {
       if (error?.data?.message) {

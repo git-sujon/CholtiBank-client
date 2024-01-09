@@ -44,7 +44,7 @@ export const transactionApi = baseApi.injectEndpoints({
     getMyStatements: build.query({
       query: (data) => ({
         url: `${urlExtension}/get-my-statements`,
-        method: "POST",
+        method: "GET",
         data: data,
       }),
       providesTags: [tagTypes.transaction],

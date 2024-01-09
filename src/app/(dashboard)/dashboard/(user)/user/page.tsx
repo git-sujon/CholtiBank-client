@@ -5,6 +5,8 @@ import BalanceCardsHolder from "@/components/Dashboard/LandingPage/BalanceCardsH
 import ProfileCard from "@/components/Dashboard/LandingPage/ProfileCard";
 
 import { useGetMyProfileQuery } from "@/redux/api/userApi";
+import { useGetMyStatementsQuery } from "@/redux/api/transactionApi";
+import { TransactionCard } from "@/components/Dashboard/LandingPage/TransactionCard";
 
 const TransactionChart = dynamic(
   () =>
@@ -19,8 +21,10 @@ const TransactionChart = dynamic(
 const UserDashboard = () => {
   const { data, isLoading } = useGetMyProfileQuery(undefined);
 
-  if (isLoading) return <LoadingPage />;
-  console.log(data);
+  const { data:statementData, isLoading:statementLoading} = useGetMyStatementsQuery(undefined)
+
+  if (isLoading || statementLoading) return <LoadingPage />;
+  console.log(statementData);
 
   return (
     <div className="min-h-svh p-4 lg:p-6">
@@ -38,7 +42,7 @@ const UserDashboard = () => {
           <TransactionChart />
         </div>
         <div>
-          <ProfileCard user={data?.data} />
+         <TransactionCard />
         </div>
       </div>
     </div>

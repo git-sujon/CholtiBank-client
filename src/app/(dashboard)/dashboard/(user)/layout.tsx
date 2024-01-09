@@ -38,7 +38,7 @@ const UserDashboardLayout = ({ children }: { children: React.ReactNode }) => {
       path: "/dashboard/user/transfer-money",
     },
     {
-      title: "Transfer",
+      title: "Mobile Recharge",
       icon: <FaMoneyBillTransfer />,
       path: "/dashboard/user/mobile-recharge",
     },

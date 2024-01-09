@@ -8,6 +8,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCollapsed } from "@/redux/slices/sidebarSlice";
+import Link from "next/link";
 export const SidebarWrapper = ({ menuItems }: { menuItems: any }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -28,14 +29,14 @@ export const SidebarWrapper = ({ menuItems }: { menuItems: any }) => {
           collapsed: collapsed,
         })}
       >
-        <div className="flex gap-8 items-center px-6">
+        <Link href={"/"} className="flex gap-8 items-center px-6">
           <Image
             src="/choltiBank.png"
             alt="CholtiBank"
             width={200}
             height={100}
           />
-        </div>
+        </Link>
         <div className="flex flex-col justify-between h-full">
           <div className="flex flex-col gap-6 mt-9 px-2">
             {menuItems.map((item: any) =>
