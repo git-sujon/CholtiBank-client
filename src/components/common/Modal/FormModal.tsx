@@ -36,15 +36,19 @@ const DepositFormModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const loginHandler = async (e: any) => {
     e.preventDefault();
-    const amount = e.target.amount.value;
-    const bankName = e.target.bankName.value;
-    const bankAccountNo = e.target.bankAccountNo.value;
-    const creditCardName = e.target.creditCardName.value;
-    const creditCardNumber = e.target.creditCardNumber.value;
-    const atmId = e.target.atmId.value;
-    const agentId = e.target.agentId.value;
-    const reference = e.target.reference.value;
+    const amount = parseFloat(e?.target?.amount?.value)
+    const bankName = e?.target?.bankName?.value;
+    const bankAccountNo = e?.target?.bankAccountNo?.value;
+    const creditCardName = e?.target?.creditCardName?.value;
+    const creditCardNumber = e?.target?.creditCardNumber?.value;
+    const atmId = e?.target?.atmId?.value;
+    const agentId = e?.target?.agentId?.value;
+    // const reference = e?.target?.reference?.value;
+
+   
+    console.log(typeof amount)
     const data = {
+      depositSource:source,
       amount,
       bankName,
       bankAccountNo,
@@ -52,11 +56,14 @@ const DepositFormModal = ({
       creditCardNumber,
       atmId,
       agentId,
-      reference,
+      // reference,
     };
 
     try {
       const response = await depositMoney(data).unwrap();
+
+      console.log("response:", response)
+
       if (response?.data) {
         toast.success(`${response?.message}`);
         if (isLoading) {
@@ -100,7 +107,7 @@ const DepositFormModal = ({
                     label="Amount"
                     name="amount"
                     placeholder="15000"
-                    type={"text"}
+                    type={"number"}
                     startContent={
                       <TbCurrencyTaka className="text-lg text-default-400  flex-shrink-0" />
                     }
@@ -136,7 +143,7 @@ const DepositFormModal = ({
                     <>
                       {/* CreditCardName */}
                       <ReusableInput
-                        label="Credit Card Name"
+                        label="Credit Card Holder Name"
                         name="creditCardName"
                         placeholder="John Doe"
                         type={"text"}
@@ -189,8 +196,6 @@ const DepositFormModal = ({
                     name="reference"
                     placeholder="Transaction Reference"
                     type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
                   />
                   {/* Pin */}
                   {/* <ReusableInput
