@@ -104,7 +104,7 @@ const Header = () => {
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
-        {userInfo?.userId ? (
+        {isUserLogged ? (
           <NavbarItem>
             <Button
               as={Link}
@@ -123,7 +123,7 @@ const Header = () => {
           </NavbarItem>
         )}
         
-        {userInfo?.userId && (
+        {isUserLogged && (
           <NavbarItem>
             <Button onClick={logoutHandler} color="primary" variant="bordered">
               Logout

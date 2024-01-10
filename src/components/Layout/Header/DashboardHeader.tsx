@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdMenu, MdOutlineMailOutline } from "react-icons/md";
 import {
   Navbar,
@@ -29,16 +29,35 @@ import { formatTimestamp } from "@/utils/formatTimeStamp";
 import messages from "@/constants/message";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCollapsed } from "@/redux/slices/sidebarSlice";
+import { useRouter } from "next/navigation";
+import { getUserInfo, removeUserInfo } from "@/services/auth.services";
+import { IJwtDecoded } from "@/types/user";
+import { authKey } from "@/constants/storageKeys";
 const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const dispatch = useAppDispatch();
   const { collapsed } = useAppSelector((state) => state.sidebar);
 
-
   const messageCount = messages.length; // Calculate the number of messages
   const isInvisible = messageCount === 0; // Check if there are no messages
 
   const notificationCount = notifications?.length;
+
+  const router = useRouter();
+
+  const userInfo = getUserInfo() as IJwtDecoded;
+
+  useEffect(() => {
+    if (!userInfo?.userId) {
+      return router.push("/");
+    }
+  }, [userInfo?.userId, router]);
+
+  const logoutHandler = () => {
+    removeUserInfo(authKey);
+    router.push("/");
+  };
+
   const handleOverlayClick = () => {
     dispatch(setCollapsed()); // Dispatch the action to collapse the sidebar
   };
@@ -173,8 +192,14 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
                 </DropdownItem>
 
                 <DropdownItem key="help_and_feedback">My Profile</DropdownItem>
-                <DropdownItem key="logout" color="danger">
-                  Log Out
+                <DropdownItem key="logout">
+                  <Button
+                    variant="solid"
+                    color="danger"
+                    onClick={logoutHandler}
+                  >
+                    Log Out
+                  </Button>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>

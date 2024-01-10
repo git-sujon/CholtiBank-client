@@ -10,11 +10,11 @@ export const menuItems = [
     //   href: "/invest",
     // },
 
-    {
-      id: "3",
-      title: "Loan",
-      href: "/loan",
-    },
+    // {
+    //   id: "3",
+    //   title: "Loan",
+    //   href: "/loan",
+    // },
     // {
     //   id: "4",
     //   title: "Payments",
