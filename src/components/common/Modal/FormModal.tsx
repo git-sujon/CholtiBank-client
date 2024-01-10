@@ -36,13 +36,23 @@ const DepositFormModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const loginHandler = async (e: any) => {
     e.preventDefault();
-    const pin = e.target.pin.value;
     const amount = e.target.amount.value;
     const bankName = e.target.bankName.value;
+    const bankAccountNo = e.target.bankAccountNo.value;
+    const creditCardName = e.target.creditCardName.value;
+    const creditCardNumber = e.target.creditCardNumber.value;
+    const atmId = e.target.atmId.value;
+    const agentId = e.target.agentId.value;
+    const reference = e.target.reference.value;
     const data = {
-      pin,
       amount,
       bankName,
+      bankAccountNo,
+      creditCardName,
+      creditCardNumber,
+      atmId,
+      agentId,
+      reference,
     };
 
     try {
@@ -84,7 +94,7 @@ const DepositFormModal = ({
                   <div className=" mb-2">
                     <FormTitle title="Deposit" />
                   </div>
-{/* <ReusableSelect /> */}
+                  {/* <ReusableSelect /> */}
                   {/* Amount */}
                   <ReusableInput
                     label="Amount"
@@ -97,68 +107,81 @@ const DepositFormModal = ({
                     isRequired={true}
                     isInvalid={errorMessage ? true : false}
                   />
+                  {source === "bank_transfer" && (
+                    <>
+                      <ReusableInput
+                        label="Bank Name"
+                        name="bankName"
+                        placeholder="EBL Bank"
+                        type={"text"}
+                        startContent={
+                          <TbCurrencyTaka className="text-lg text-default-400  flex-shrink-0" />
+                        }
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
 
-                  {/* BankName */}
-                  <ReusableInput
-                    label="Bank Name"
-                    name="bankName"
-                    placeholder="EBL Bank"
-                    type={"text"}
-                    startContent={
-                      <TbCurrencyTaka className="text-lg text-default-400  flex-shrink-0" />
-                    }
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
+                      <ReusableInput
+                        label="Bank Account No"
+                        name="bankAccountNo"
+                        placeholder="1234567890"
+                        type={"text"}
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
+                    </>
+                  )}
 
-                  <ReusableInput
-                    label="Bank Account No"
-                    name="bankAccountNo"
-                    placeholder="1234567890"
-                    type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
+                  {source === "credit_card" && (
+                    <>
+                      {/* CreditCardName */}
+                      <ReusableInput
+                        label="Credit Card Name"
+                        name="creditCardName"
+                        placeholder="John Doe"
+                        type={"text"}
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
 
-                  {/* CreditCardName */}
-                  <ReusableInput
-                    label="Credit Card Name"
-                    name="creditCardName"
-                    placeholder="John Doe"
-                    type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
+                      {/* CreditCardNumber */}
+                      <ReusableInput
+                        label="Credit Card Number"
+                        name="creditCardNumber"
+                        placeholder="1234-5678-9012-3456"
+                        type={"text"}
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
+                    </>
+                  )}
 
-                  {/* CreditCardNumber */}
-                  <ReusableInput
-                    label="Credit Card Number"
-                    name="creditCardNumber"
-                    placeholder="1234-5678-9012-3456"
-                    type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
-
-                  {/* ATM ID */}
-                  <ReusableInput
-                    label="ATM ID"
-                    name="atmId"
-                    placeholder="ATM123"
-                    type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
-
-                  {/* Agent ID */}
-                  <ReusableInput
-                    label="Agent ID"
-                    name="agentId"
-                    placeholder="Agent123"
-                    type={"text"}
-                    isRequired={true}
-                    isInvalid={errorMessage ? true : false}
-                  />
+                  {source === "atm" && (
+                    <>
+                      {/* ATM ID */}
+                      <ReusableInput
+                        label="ATM ID"
+                        name="atmId"
+                        placeholder="ATM123"
+                        type={"text"}
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
+                    </>
+                  )}
+                  {source === "agent" && (
+                    <>
+                      {/* Agent ID */}
+                      <ReusableInput
+                        label="Agent ID"
+                        name="agentId"
+                        placeholder="Agent123"
+                        type={"text"}
+                        isRequired={true}
+                        isInvalid={errorMessage ? true : false}
+                      />
+                    </>
+                  )}
 
                   {/* Reference */}
                   <ReusableInput
@@ -170,7 +193,7 @@ const DepositFormModal = ({
                     isInvalid={errorMessage ? true : false}
                   />
                   {/* Pin */}
-                  <ReusableInput
+                  {/* <ReusableInput
                     label="Pin"
                     name="pin"
                     placeholder="********"
@@ -194,7 +217,7 @@ const DepositFormModal = ({
                     isRequired={true}
                     isInvalid={errorMessage ? true : false}
                     errorMessage={errorMessage}
-                  />
+                  /> */}
                   <Button
                     type="submit"
                     className="text-white w-full"
