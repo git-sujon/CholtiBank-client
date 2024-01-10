@@ -1,7 +1,8 @@
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
-import DepositFormModal from "@/components/common/Modal/DepositFormModal";
-import { mobileOperatorTypes } from "@/constants/transactionTypes";
+import MobileRechargeFormModal from "@/components/common/Modal/MobileRechargeFormModal";
+import { mobileOperatorTypes, transferSourceTypes } from "@/constants/transactionTypes";
+
 import { useDisclosure } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -22,7 +23,7 @@ const MobileRecharge = () => {
           />
         ))}
       </div>
-      <DepositFormModal
+      <MobileRechargeFormModal
         isOpen={isOpen}
         onOpen={onOpen}
         onOpenChange={onOpenChange}
