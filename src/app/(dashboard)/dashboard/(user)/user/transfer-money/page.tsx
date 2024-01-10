@@ -1,6 +1,6 @@
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
-import DepositFormModal from "@/components/common/Modal/DepositFormModal";
+import TransferFormModal from "@/components/common/Modal/TransferFormModal";
 import { transferSourceTypes } from "@/constants/transactionTypes";
 
 import { useDisclosure } from "@nextui-org/react";
@@ -23,7 +23,7 @@ const TransferMoney = () => {
           />
         ))}
       </div>
-      <DepositFormModal
+      <TransferFormModal
         isOpen={isOpen}
         onOpen={onOpen}
         onOpenChange={onOpenChange}

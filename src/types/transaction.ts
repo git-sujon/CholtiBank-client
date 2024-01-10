@@ -45,6 +45,7 @@ export type ITransferMoney = {
   receiverId?: string;
   // reference?: string;
   receiverNID?: string;
+  phoneNumber?: string;
   bankBranch?: string;
   cashByCodePIN?: string;
   creditCardName?: string;

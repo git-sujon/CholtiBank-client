@@ -49,88 +49,80 @@ export const withdrawSourceTypes = [
 
 export const transferSourceTypes = [
   {
-    id: "cholti_to_cholti",
-
+    id: "Cholti_to_Cholti",
     title: "Cholti to Cholti",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "npsb",
-
+    id: "NPSB",
     title: "NPSB",
     icon: <FaCreditCard className="text-6xl text-secondary" />,
   },
   {
-    id: "eft",
-
+    id: "EFT",
     title: "EFT",
     icon: <FaCreditCard className="text-6xl text-secondary" />,
   },
   {
-    id: "rtgs",
-
+    id: "RTGS",
     title: "RTGS",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "cash_by_code",
-
+    id: "Cash_by_code",
     title: "Cash by Code",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "bkash",
-
+    id: "BKash",
     title: "BKash",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "nagad",
-
+    id: "Nagad",
     title: "Nagad",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "prepaid_card",
-
+    id: "Prepaid_Card",
     title: "Prepaid Card",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
   {
-    id: "binimoy",
-
+    id: "Binimoy",
     title: "Binimoy",
     icon: <FaExchangeAlt className="text-6xl text-secondary" />,
   },
 ];
 
+
 export const mobileOperatorTypes = [
   {
-    id: "grameenphone",
+    id: "Grameenphone",
 
     title: "Grameenphone",
     icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
   },
   {
-    id: "robi",
+    id: "Robi",
 
     title: "Robi",
     icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
   },
   {
-    id: "banglalink",
+    id: "Banglalink",
 
     title: "Banglalink",
     icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
   },
   {
-    id: "airtel",
+    id: "Airtel",
 
     title: "Airtel",
     icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
   },
   {
-    id: "teletalk",
+    id: "Teletalk",
 
     title: "Teletalk",
     icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
