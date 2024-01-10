@@ -3,11 +3,11 @@
 import { Button, Card, Divider, Input } from "@nextui-org/react";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { GiBleedingEye } from "react-icons/gi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import { MdPhonelinkLock } from "react-icons/md";
 import { BiSolidLogIn } from "react-icons/bi";
-
+import { useGetMyProfileQuery } from "@/redux/api/userApi";
 import Link from "next/link";
 import { useUserLoginMutation } from "@/redux/api/authApi";
 import LoadingPage from "@/app/loading";
@@ -18,11 +18,20 @@ import toast from "react-hot-toast";
 import ReusableInput from "@/components/Forms/ReusableInput";
 const Login = () => {
   const [userLogin, { isLoading }] = useUserLoginMutation();
+  const {data:profileData, isLoading:profileLoading} = useGetMyProfileQuery(undefined)
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
   const toggleVisibility = () => setIsVisible(!isVisible);
-
   const [errorMessage, setErrorMessage] = useState("");
+
+
+useEffect(()=>{
+  if(profileData?.data?.role){
+    router.push(`/dashboard/${profileData?.data?.role}`)
+  }
+
+}, [profileData?.data?.role,router])
+
 
   const loginHandler = async (e: any) => {
     e.preventDefault();

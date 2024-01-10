@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
 import {
   Navbar,
@@ -15,39 +15,32 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
+import { usePathname, useRouter } from "next/navigation";
+import { getUserInfo, removeUserInfo } from "@/services/auth.services";
+import { authKey } from "@/constants/storageKeys";
+import { IJwtDecoded } from "@/types/user";
+import { menuItems } from "@/constants/header";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isUserLogged, setIsUserLogged] = useState(false);
 
-  const menuItems = [
-    {
-      id: "1",
-      title: "Home",
-      href: "/",
-    },
-    {
-      id: "2",
-      title: "Invest",
-      href: "/invest",
-    },
+  const pathName = usePathname();
+  const router = useRouter();
 
-    {
-      id: "3",
-      title: "Loan",
-      href: "/loan",
-    },
-    {
-      id: "4",
-      title: "Payments",
-      href: "/payments",
-    },
-    {
-      id: "5",
-      title: "My Account",
-      href: "/login",
-    },
-  ];
+  const userInfo = getUserInfo() as IJwtDecoded;
 
+  useEffect(() => {
+    if (userInfo?.userId) {
+      setIsUserLogged(true);
+    }
+  }, [userInfo?.userId]);
+
+  const logoutHandler = () => {
+    setIsUserLogged(false);
+    removeUserInfo(authKey);
+    router.push("/");
+  };
   return (
     <Navbar
       isBordered
@@ -111,11 +104,32 @@ const Header = () => {
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="/login" variant="bordered">
-            My Account
-          </Button>
-        </NavbarItem>
+        {userInfo?.userId ? (
+          <NavbarItem>
+            <Button
+              as={Link}
+              color="primary"
+              href={`/dashboard/${userInfo?.role}`}
+              variant="bordered"
+            >
+              My Account
+            </Button>
+          </NavbarItem>
+        ) : (
+          <NavbarItem>
+            <Button as={Link} color="primary" href="/login" variant="bordered">
+              My Account
+            </Button>
+          </NavbarItem>
+        )}
+        
+        {userInfo?.userId && (
+          <NavbarItem>
+            <Button onClick={logoutHandler} color="primary" variant="bordered">
+              Logout
+            </Button>
+          </NavbarItem>
+        )}
       </NavbarContent>
 
       <NavbarMenu>

@@ -9,7 +9,7 @@ export interface IUser {
 }
 
 export interface IJwtDecoded {
-  _id: string;
+  userId: string;
   phoneNumber: string;
   role: string;
   iat: number;

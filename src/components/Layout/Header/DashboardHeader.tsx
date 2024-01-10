@@ -33,13 +33,7 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const dispatch = useAppDispatch();
   const { collapsed } = useAppSelector((state) => state.sidebar);
-  const menuItems = [
-    {
-      id: "1",
-      title: "Home",
-      href: "/",
-    },
-  ];
+
 
   const messageCount = messages.length; // Calculate the number of messages
   const isInvisible = messageCount === 0; // Check if there are no messages
