@@ -1,42 +1,13 @@
-// MobileRecharge page
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
-import { MobileOperatorEnum } from "@/constants/enums";
-import { FaCreditCard, FaExchangeAlt } from "react-icons/fa";
+import DepositFormModal from "@/components/common/Modal/DepositFormModal";
+import { mobileOperatorTypes } from "@/constants/transactionTypes";
+import { useDisclosure } from "@nextui-org/react";
+import { useState } from "react";
 
 const MobileRecharge = () => {
-  const mobileOperatorTypes = [
-    {
-      id: "grameenphone",
-      href: `/dashboard/user/mobile-recharge/${MobileOperatorEnum.Grameenphone}`,
-      title: "Grameenphone",
-      icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
-    },
-    {
-      id: "robi",
-      href: `/dashboard/user/mobile-recharge/${MobileOperatorEnum.Robi}`,
-      title: "Robi",
-      icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
-    },
-    {
-      id: "banglalink",
-      href: `/dashboard/user/mobile-recharge/${MobileOperatorEnum.Banglalink}`,
-      title: "Banglalink",
-      icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
-    },
-    {
-      id: "airtel",
-      href: `/dashboard/user/mobile-recharge/${MobileOperatorEnum.Airtel}`,
-      title: "Airtel",
-      icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
-    },
-    {
-      id: "teletalk",
-      href: `/dashboard/user/mobile-recharge/${MobileOperatorEnum.Teletalk}`,
-      title: "Teletalk",
-      icon: <FaExchangeAlt className="text-6xl  text-secondary" />,
-    },
-  ];
+  const [source, setSource] = useState("");
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div className="p-4 lg:p-6">
@@ -44,12 +15,19 @@ const MobileRecharge = () => {
         {mobileOperatorTypes.map((type) => (
           <SourceCard
             key={type.id}
-            icon={type.icon}
-            href={type.href}
-            title={type.title}
+            data={type}
+            source={source}
+            setSource={setSource}
+            onOpen={onOpen}
           />
         ))}
       </div>
+      <DepositFormModal
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onOpenChange={onOpenChange}
+        source={source}
+      />
     </div>
   );
 };

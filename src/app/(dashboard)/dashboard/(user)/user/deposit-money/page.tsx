@@ -1,6 +1,6 @@
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
-import DepositFormModal from "@/components/common/Modal/FormModal";
+import DepositFormModal from "@/components/common/Modal/DepositFormModal";
 import { depositTransactionTypes } from "@/constants/transactionTypes";
 import { useDisclosure } from "@nextui-org/react";
 import { useState } from "react";

@@ -1,11 +1,6 @@
 "use client";
-
-import { IoEyeOffSharp } from "react-icons/io5";
-import { GiBleedingEye } from "react-icons/gi";
 import { TbCurrencyTaka } from "react-icons/tb";
-
 import { useState } from "react";
-import { TbPasswordFingerprint } from "react-icons/tb";
 import { BiSolidLogIn } from "react-icons/bi";
 import LoadingPage from "@/app/loading";
 import { useRouter } from "next/navigation";
@@ -14,7 +9,6 @@ import ReusableInput from "@/components/Forms/ReusableInput";
 import { Modal, ModalContent, ModalBody, Button } from "@nextui-org/react";
 import FormTitle from "@/components/Forms/FormTitle";
 import { useDepositMoneyMutation } from "@/redux/api/transactionApi";
-import ReusableSelect from "@/components/Forms/ReusableSelect";
 
 const DepositFormModal = ({
   isOpen,

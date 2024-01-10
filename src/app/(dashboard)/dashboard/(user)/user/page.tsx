@@ -24,13 +24,14 @@ const UserDashboard = () => {
   const { data:statementData, isLoading:statementLoading} = useGetMyStatementsQuery(undefined)
 
   if (isLoading || statementLoading) return <LoadingPage />;
-  console.log(statementData);
+
+  const balance = data?.data?.userFinancialInfo?.accountBalance
 
   return (
     <div className="min-h-svh p-4 lg:p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
-          <BalanceCardsHolder balance={73000.34} />
+          <BalanceCardsHolder balance={balance} />
         </div>
         <div>
           <ProfileCard user={data?.data} />

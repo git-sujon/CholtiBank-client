@@ -11,7 +11,7 @@ export const transactionApi = baseApi.injectEndpoints({
         method: "POST",
         data: data,
       }),
-      invalidatesTags: [tagTypes.transaction],
+      invalidatesTags: [tagTypes.transaction, tagTypes.user],
     }),
 
     withdrawMoney: build.mutation({

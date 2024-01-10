@@ -1,27 +1,13 @@
-// WithdrawMoney page
 "use client";
 import SourceCard from "@/components/Dashboard/UIElements/SourceCard";
-import { WithdrawSourceEnum } from "@/constants/enums";
-import { FaUserTie, FaMoneyBillAlt } from "react-icons/fa";
+import WithdrawFormModal from "@/components/common/Modal/WithdrawFormModal";
+import {  withdrawSourceTypes } from "@/constants/transactionTypes";
+import { useDisclosure } from "@nextui-org/react";
+import { useState } from "react";
 
 const WithdrawMoney = () => {
-  const withdrawSources = ["agent", "atm"];
-
-  const withdrawSourceTypes = [
-    {
-      id: "agent",
-      href: `/dashboard/user/withdraw-money/${WithdrawSourceEnum.agent}`,
-      title: "Agent",
-      icon: <FaUserTie className="text-6xl text-secondary" />,
-    },
-    {
-      id: "atm",
-      href: `/dashboard/user/withdraw-money/${WithdrawSourceEnum.atm}`,
-      title: "ATM",
-      icon: <FaMoneyBillAlt className="text-6xl text-secondary" />,
-    },
-  ];
-  
+  const [source, setSource] = useState("");
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div className="p-4 lg:p-6">
@@ -29,12 +15,19 @@ const WithdrawMoney = () => {
         {withdrawSourceTypes.map((type) => (
           <SourceCard
             key={type.id}
-            icon={type.icon}
-            href={type.href}
-            title={type.title}
+            data={type}
+            source={source}
+            setSource={setSource}
+            onOpen={onOpen}
           />
         ))}
       </div>
+      <WithdrawFormModal
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onOpenChange={onOpenChange}
+        source={source}
+      />
     </div>
   );
 };

@@ -17,8 +17,8 @@ export type IAddDeposit = {
   creditCardNumber?: string | null;
   atmId?: string | null;
   agentId?: string | null;
-  reference?: string;
-  pin: string;
+  // reference?: string;
+  // pin: string;
 };
 
 // Withdrawal Type
@@ -27,7 +27,7 @@ export type IWithdrawalMoney = {
   withdrawSource: WithdrawSourceEnum;
   atmId?: string | null;
   agentId?: string | null;
-  reference?: string;
+  // reference?: string;
 };
 
 // Transaction Type
@@ -43,7 +43,7 @@ export type ITransferMoney = {
   bankAccountNo?: string;
   receiverName?: string;
   receiverId?: string;
-  reference?: string;
+  // reference?: string;
   receiverNID?: string;
   bankBranch?: string;
   cashByCodePIN?: string;
