@@ -21,17 +21,28 @@ const TransactionChart = dynamic(
 const UserDashboard = () => {
   const { data, isLoading } = useGetMyProfileQuery(undefined);
 
-  const { data:statementData, isLoading:statementLoading} = useGetMyStatementsQuery(undefined)
+  const { data: statementData, isLoading: statementLoading } =
+    useGetMyStatementsQuery(undefined);
 
   if (isLoading || statementLoading) return <LoadingPage />;
 
-  const balance = data?.data?.userFinancialInfo?.accountBalance
-
+  const balance = data?.data?.userFinancialInfo?.accountBalance;
+  const totalDeposit = data?.data?.userFinancialInfo?.totalDeposit;
+  const totalTransfer = data?.data?.userFinancialInfo?.totalTransfer;
+  const totalRecharge = data?.data?.userFinancialInfo?.totalRecharge;
+  const totalWithdraw = data?.data?.userFinancialInfo?.totalWithdraw;
+  console.log(data);
   return (
     <div className="min-h-svh p-4 lg:p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
-          <BalanceCardsHolder balance={balance} />
+          <BalanceCardsHolder
+            balance={balance}
+            totalDeposit={totalDeposit}
+            totalTransfer={totalTransfer}
+            totalRecharge={totalRecharge}
+            totalWithdraw={totalWithdraw}
+          />
         </div>
         <div>
           <ProfileCard user={data?.data} />
@@ -43,7 +54,7 @@ const UserDashboard = () => {
           <TransactionChart />
         </div>
         <div>
-         <TransactionCard />
+          <TransactionCard />
         </div>
       </div>
     </div>

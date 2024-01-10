@@ -21,7 +21,7 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
     path: "/dashboard/admin",
   },
   {
-    title: "Users",
+    title: "Customers",
     icon: <FaUsers />,
     path: "/dashboard/admin/users",
   },
@@ -30,15 +30,15 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
     icon: <AiOutlineTransaction />,
     path: "/dashboard/admin/transactions",
   },
-  {
-    title: "Cards Issues",
-    icon: <FaRegCreditCard />,
-    items: [
-      { title: "Cholti Plus", icon: <CiCreditCard1 />, path: "#" },
-      { title: "Cholti Gold", icon: <CiCreditCard1 />, path: "#" },
-      { title: "Visa", icon: <CiCreditCard1 />, path: "#" },
-    ],
-  },
+  // {
+  //   title: "Cards Issues",
+  //   icon: <FaRegCreditCard />,
+  //   items: [
+  //     { title: "Cholti Plus", icon: <CiCreditCard1 />, path: "#" },
+  //     { title: "Cholti Gold", icon: <CiCreditCard1 />, path: "#" },
+  //     { title: "Visa", icon: <CiCreditCard1 />, path: "#" },
+  //   ],
+  // },
   {
     title: "Loan Officers",
     icon: <RiBriefcase4Fill />,

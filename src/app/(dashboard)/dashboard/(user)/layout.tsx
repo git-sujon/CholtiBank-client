@@ -47,11 +47,11 @@ const UserDashboardLayout = ({ children }: { children: React.ReactNode }) => {
       icon: <TbReportMoney />,
       path: "/dashboard/user/statements",
     },
-    {
-      title: "Cards",
-      icon: <FaRegCreditCard />,
-      path: "/dashboard/user/cards",
-    },
+    // {
+    //   title: "Cards",
+    //   icon: <FaRegCreditCard />,
+    //   path: "/dashboard/user/cards",
+    // },
     
 
   ];

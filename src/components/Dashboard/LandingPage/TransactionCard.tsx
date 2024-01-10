@@ -3,34 +3,34 @@ import React from "react";
 
 const items = [
   {
-    name: "Jose Perez",
+    name: "Md Rahim",
     picture: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    amount: "4500 USD",
-    date: "9/20/2021",
+    amount: "4500 BDT",
+    date: "9/20/2024",
   },
   {
     name: "Jose Perez",
     picture: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    amount: "4500 USD",
-    date: "9/20/2021",
+    amount: "4500 BDT",
+    date: "9/20/2024",
   },
   {
-    name: "Jose Perez",
+    name: "Md shafiq",
     picture: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    amount: "4500 USD",
-    date: "9/20/2021",
+    amount: "4500 BDT",
+    date: "9/20/2024",
   },
   {
-    name: "Jose Perez",
+    name: "Shojib",
     picture: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    amount: "4500 USD",
-    date: "9/20/2021",
+    amount: "4500 BDT",
+    date: "9/20/2024",
   },
   {
-    name: "Jose Perez",
+    name: "Zia Ahmed",
     picture: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    amount: "4500 USD",
-    date: "9/20/2021",
+    amount: "4500 BDT",
+    date: "9/20/2024",
   },
 ];
 
