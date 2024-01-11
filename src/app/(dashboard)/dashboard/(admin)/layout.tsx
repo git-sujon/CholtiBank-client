@@ -39,11 +39,11 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
   //     { title: "Visa", icon: <CiCreditCard1 />, path: "#" },
   //   ],
   // },
-  {
-    title: "Loan Officers",
-    icon: <RiBriefcase4Fill />,
-    path: "/dashboard/admin/loan-officers",
-  },
+  // {
+  //   title: "Loan Officers",
+  //   icon: <RiBriefcase4Fill />,
+  //   path: "/dashboard/admin/loan-officers",
+  // },
   // Add more menu items as needed
 ];
 

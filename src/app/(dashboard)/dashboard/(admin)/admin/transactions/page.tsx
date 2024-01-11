@@ -13,13 +13,14 @@ import {
   getKeyValue,
 } from "@nextui-org/react";
 
-import LoadingPage from "@/app/loading";
-import { useGetAllUsersQuery } from "@/redux/api/adminApi";
 
-export default function AllUsersPage() {
+import LoadingPage from "@/app/loading";
+import { useAllTransactionsQuery } from "@/redux/api/adminApi";
+
+export default function AllTransactions() {
   const [page, setPage] = React.useState(1);
 
-  const { data, isLoading } = useGetAllUsersQuery(undefined);
+  const { data, isLoading } = useAllTransactionsQuery(undefined);
 
   if (isLoading) {
     return <LoadingPage />;
@@ -55,9 +56,9 @@ export default function AllUsersPage() {
         }
       >
         <TableHeader>
-          <TableColumn key={"firstName"}>First Name</TableColumn>
-          <TableColumn key={"lastName"}>Last Name</TableColumn>
-          <TableColumn key={"nationalId"}>National ID</TableColumn>
+          <TableColumn key={"transactionId"}>TransactionId</TableColumn>
+          <TableColumn key={"transactionType"}>Type</TableColumn>
+          <TableColumn key={"deposit"}>Amount</TableColumn>
         </TableHeader>
         <TableBody
           items={data?.data ?? []}
@@ -65,9 +66,21 @@ export default function AllUsersPage() {
           loadingState={loadingState}
         >
           {(item: any) => (
-           <TableRow key={item.name}>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-          </TableRow>
+            <TableRow key={item.transactionId}>
+              {(columnKey) => (
+                <TableCell>
+                  {columnKey === "deposit"
+                    ? item.deposit?.amount
+                    : columnKey === "withdrawal"
+                    ? item.withdrawal?.amount
+                    : columnKey === "transfer"
+                    ? item.transfer?.amount
+                    : columnKey === "mobileRecharge"
+                    ? item.mobileRecharge?.amount
+                    : item[columnKey]}
+                </TableCell>
+              )}
+            </TableRow>
           )}
         </TableBody>
       </Table>

@@ -8,7 +8,7 @@ import { FaIdCard } from "react-icons/fa";
 import { TbPasswordUser } from "react-icons/tb";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { GiBleedingEye } from "react-icons/gi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react";
 import { useUserSignUpMutation } from "@/redux/api/authApi";
 import { useRouter } from "next/navigation";
@@ -25,6 +25,13 @@ const OpenAccount = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
   const toggleVisibilityPin = () => setIsVisiblePin(!isVisiblePin);
   const [errorMessage, setErrorMessage] = useState("");
+  const { role } = getUserInfo() as IJwtDecoded;
+
+  useEffect(() => {
+    if (role) {
+      router.push(`/dashboard/${role}`);
+    }
+  }, [role, router]);
 
   const signUpHandler = async (event: any) => {
     event.preventDefault();
@@ -53,9 +60,8 @@ const OpenAccount = () => {
         if (isLoading) {
           return <LoadingPage />;
         }
-        const { role } = getUserInfo() as IJwtDecoded;
 
-        // router.push(`/${role}`);
+        router.push(`/dashboard/${role}`);
       }
     } catch (error: any) {
       console.log("error:", error);

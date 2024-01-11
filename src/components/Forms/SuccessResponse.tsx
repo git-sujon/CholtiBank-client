@@ -1,3 +1,5 @@
+"use client"
+import toast from "react-hot-toast";
 
 
 const successResponse = (response: any, redirect: string, router?: any) => {

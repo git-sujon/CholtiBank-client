@@ -3,14 +3,16 @@ import React from "react";
 
 const ReusableSelect = ({ items }:{ items:any }) => {
   return (
-    <Select
+    <div>
+      {/* <Select
       items={items}
       label="Favorite Animal"
       placeholder="Select an animal"
       className="max-w-xs"
     >
       {(source) => <SelectItem key={source.value}>{source.label}</SelectItem>}
-    </Select>
+    </Select> */}
+    </div>
   );
 };
 

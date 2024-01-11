@@ -21,7 +21,7 @@ const DepositFormModal = ({
   onOpenChange: any;
   source: string;
 }) => {
-  console.log("source:", source);
+
   const [depositMoney, { isLoading }] = useDepositMoneyMutation();
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
@@ -40,7 +40,7 @@ const DepositFormModal = ({
     // const reference = e?.target?.reference?.value;
 
    
-    console.log(typeof amount)
+
     const data = {
       depositSource:source,
       amount,
@@ -56,14 +56,14 @@ const DepositFormModal = ({
     try {
       const response = await depositMoney(data).unwrap();
 
-      console.log("response:", response)
+      
 
       if (response?.data) {
         toast.success(`${response?.message}`);
         if (isLoading) {
           return <LoadingPage />;
         }
-        // onClose();
+     
       }
     } catch (error: any) {
       if (error?.data?.message) {
@@ -95,7 +95,7 @@ const DepositFormModal = ({
                   <div className=" mb-2">
                     <FormTitle title="Deposit" />
                   </div>
-                  {/* <ReusableSelect /> */}
+                 
                   {/* Amount */}
                   <ReusableInput
                     label="Amount"

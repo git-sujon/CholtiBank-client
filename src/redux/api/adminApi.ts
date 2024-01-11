@@ -8,7 +8,7 @@ export const adminApi = baseApi.injectEndpoints({
     allTransactions: build.query({
       query: (data) => ({
         url: `${urlExtension}/all-transactions`,
-        method: "POST",
+        method: "GET",
         data: data,
       }),
       providesTags: [tagTypes.transaction, tagTypes.admin],
@@ -17,7 +17,7 @@ export const adminApi = baseApi.injectEndpoints({
     getAllUsers: build.query({
       query: (data) => ({
         url: `${urlExtension}/get-all-users`,
-        method: "POST",
+        method: "GET",
         data: data,
       }),
       providesTags: [tagTypes.transaction, tagTypes.admin, tagTypes.user],
@@ -35,7 +35,7 @@ export const adminApi = baseApi.injectEndpoints({
     getAllEmployees: build.query({
       query: (data) => ({
         url: `${urlExtension}/get-all-employees`,
-        method: "POST",
+        method: "GET",
         data: data,
       }),
       providesTags: [tagTypes.admin, tagTypes.user],
