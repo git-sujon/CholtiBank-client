@@ -20,6 +20,8 @@ import { getUserInfo, removeUserInfo } from "@/services/auth.services";
 import { authKey } from "@/constants/storageKeys";
 import { IJwtDecoded } from "@/types/user";
 import { menuItems } from "@/constants/header";
+import { useTheme } from "next-themes";
+import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -27,6 +29,8 @@ const Header = () => {
 
   const pathName = usePathname();
   const router = useRouter();
+
+  const { resolvedTheme } = useTheme();
 
   const userInfo = getUserInfo() as IJwtDecoded;
 
@@ -59,12 +63,15 @@ const Header = () => {
       {/* Mobile screen logo */}
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <Image
-            src="/choltiBank.png"
-            alt="CholtiBank"
-            width={200}
-            height={100}
-          />
+          <Link href={"/"}>
+            <ThemeWiseImageLoader
+              srcLight="/choltiBank.png"
+              srcDark="/choltiBank_dark_1.png"
+              alt="logo"
+              width={150}
+              height={35}
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -72,12 +79,23 @@ const Header = () => {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
-          <Image
-            src="/choltiBank.png"
-            alt="CholtiBank"
-            width={200}
-            height={100}
-          />
+          <Link href={"/"}>
+            {resolvedTheme === "light" ? (
+              <Image
+                src="/choltiBank.png"
+                alt="CholtiBank"
+                width={200}
+                height={100}
+              />
+            ) : (
+              <Image
+                src="/choltiBank_dark_1.png"
+                alt="CholtiBank"
+                width={200}
+                height={100}
+              />
+            )}
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -122,7 +140,7 @@ const Header = () => {
             </Button>
           </NavbarItem>
         )}
-        
+
         {isUserLogged && (
           <NavbarItem>
             <Button onClick={logoutHandler} color="primary" variant="bordered">

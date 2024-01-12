@@ -35,19 +35,19 @@ module.exports = {
           colors: {
             primary: {
               DEFAULT: "#ff9100",
-              foreground: "#333333",
             },
             secondary: {
               DEFAULT: "#04185C",
-              foreground: "#333333",
             },
           },
         },
         dark: {
           primary: {
-            DEFAULT: "#ff9100",
-            foreground: "#FFFFFF",
+            DEFAULT: "#ffffff",
           },
+          secondary:{
+            DEFAULT: "#ffffff",
+          }
         },
       },
     }),
