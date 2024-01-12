@@ -4,11 +4,11 @@ import { Sidebar } from "./sidebar.styles";
 import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCollapsed } from "@/redux/slices/sidebarSlice";
 import Link from "next/link";
+import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
 export const SidebarWrapper = ({ menuItems }: { menuItems: any }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -30,11 +30,12 @@ export const SidebarWrapper = ({ menuItems }: { menuItems: any }) => {
         })}
       >
         <Link href={"/"} className="flex gap-8 items-center px-6">
-          <Image
-            src="/choltiBank.png"
-            alt="CholtiBank"
-            width={200}
-            height={100}
+          <ThemeWiseImageLoader
+            srcLight="/choltiBank.png"
+            srcDark="/choltiBank_dark_1.png"
+            alt="logo"
+            width={150}
+            height={35}
           />
         </Link>
         <div className="flex flex-col justify-between h-full">

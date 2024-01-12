@@ -5,7 +5,7 @@ import OutlineButton from "@/components/UI Elements/Button/OutlineButton";
 const TextAndButtonPart = () => {
   return (
     <div className="space-y-3 max-w-md ">
-      <h1 className="text-4xl font-black uppercase text-primary">
+      <h1 className="text-3xl md:text-4xl font-black uppercase text-primary">
         {"Bangladesh's"} first digital bank
       </h1>
       <p className="leading-relaxed  text-slate-600 dark:text-slate-100 text-justify">

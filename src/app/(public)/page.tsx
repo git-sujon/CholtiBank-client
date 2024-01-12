@@ -1,5 +1,3 @@
-import Footer from "@/components/Layout/Footer/Footer";
-import Header from "@/components/Layout/Header/Header";
 import CurrencySupport from "@/components/Pages/Home/CurrencySupport/CurrencySupport";
 import DownloadApp from "@/components/Pages/Home/DownloadApp/DownloadApp";
 import FAQ from "@/components/Pages/Home/FAQ/FAQ";

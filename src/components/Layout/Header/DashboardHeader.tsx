@@ -21,8 +21,6 @@ import {
   ButtonGroup,
 } from "@nextui-org/react";
 import { MdOutlineNotificationsActive } from "react-icons/md";
-import { FaRegEnvelope } from "react-icons/fa";
-import Image from "next/image";
 import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
 import notifications from "@/constants/notifications";
 import { formatTimestamp } from "@/utils/formatTimeStamp";
@@ -33,6 +31,7 @@ import { useRouter } from "next/navigation";
 import { getUserInfo, removeUserInfo } from "@/services/auth.services";
 import { IJwtDecoded } from "@/types/user";
 import { authKey } from "@/constants/storageKeys";
+import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
 const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const dispatch = useAppDispatch();
@@ -84,12 +83,15 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
         {/* Mobile screen logo */}
         <NavbarContent className="sm:hidden pr-3" justify="center">
           <NavbarBrand className="flex gap-8 items-center px-6">
-            <Image
-              src="/choltiBank.png"
-              alt="CholtiBank"
-              width={200}
-              height={100}
+          <Link href={"/"}>
+            <ThemeWiseImageLoader
+              srcLight="/choltiBank.png"
+              srcDark="/choltiBank_dark_1.png"
+              alt="logo"
+              width={150}
+              height={35}
             />
+          </Link>
           </NavbarBrand>
         </NavbarContent>
 

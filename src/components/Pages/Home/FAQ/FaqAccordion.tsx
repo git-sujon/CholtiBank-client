@@ -8,7 +8,7 @@ const FaqAccordion = () => {
       variant="bordered"
       selectionMode="multiple"
       itemClasses={{
-        title: " font-semibold",
+        title: " font-semibold text-sm md:text-base",
       }}
     >
       {faqData.map((faq) => (
@@ -19,7 +19,7 @@ const FaqAccordion = () => {
           title={faq.question}
           startContent={faq.icon}
         >
-          <span className="text-slate-900 dark:text-slate-50">
+          <span className="text-slate-900 dark:text-slate-50 text-sm md:text-base">
             {faq.answer}
           </span>
         </AccordionItem>

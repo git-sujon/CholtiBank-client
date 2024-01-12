@@ -48,13 +48,13 @@ const Header = () => {
       className=""
       maxWidth="2xl"
     >
-      <NavbarContent className="block sm:hidden" justify="start">
+      {/* <NavbarContent className="block sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
           icon={<MdMenu className="text-CSecondary size-12" />}
         ></NavbarMenuToggle>
-      </NavbarContent>
+      </NavbarContent> */}
       {/* Mobile screen logo */}
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
@@ -89,7 +89,7 @@ const Header = () => {
       {/* Menus */}
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="start">
-        {menuItems.map((item) => (
+        {menuItems.map((item:any) => (
           <NavbarItem key={item.id}>
             {item.href === "/login" ? (
               ""
@@ -116,13 +116,14 @@ const Header = () => {
               color="primary"
               href={`/dashboard/${userInfo?.role}`}
               variant="bordered"
+              size="sm"
             >
               My Account
             </Button>
           </NavbarItem>
         ) : (
           <NavbarItem>
-            <Button as={Link} color="primary" href="/login" variant="bordered">
+            <Button as={Link} size="sm" color="primary" href="/login" variant="bordered">
               My Account
             </Button>
           </NavbarItem>
@@ -130,15 +131,15 @@ const Header = () => {
 
         {isUserLogged && (
           <NavbarItem>
-            <Button onClick={logoutHandler} color="primary" variant="bordered">
+            <Button onClick={logoutHandler} size="sm" color="primary" variant="bordered">
               Logout
             </Button>
           </NavbarItem>
         )}
       </NavbarContent>
 
-      <NavbarMenu>
-        {menuItems.map((item) => (
+      {/* <NavbarMenu>
+        {menuItems.map((item:any) => (
           <NavbarMenuItem key={item.id}>
             {item.href === "/login" ? (
               <Button
@@ -160,7 +161,7 @@ const Header = () => {
             )}
           </NavbarMenuItem>
         ))}
-      </NavbarMenu>
+      </NavbarMenu> */}
     </Navbar>
   );
 };

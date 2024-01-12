@@ -25,28 +25,28 @@ const CardBenefits = () => {
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-5 my-3">
         <div className="flex items-center gap-x-2 mb-2">
-          <FiCreditCard className="text-2xl text-zinc-900" />
-          <p className="font-semibold">Cholti Regular</p>
+          <FiCreditCard className="text-xl md:text-2xl  text-zinc-900" />
+          <p className="font-semibold text-sm md:text-base">Cholti Regular</p>
         </div>
         <div className="flex items-center gap-x-2 mb-2">
-          <CiCreditCard2 className="text-2xl text-green-500" />
-          <p className="font-semibold">Cholti Plus</p>
+          <CiCreditCard2 className="text-xl md:text-2xl  text-green-500" />
+          <p className="font-semibold text-sm md:text-base">Cholti Plus</p>
         </div>
         <div className="flex items-center gap-x-2 mb-2">
-          <FaRegCreditCard className="text-2xl text-yellow-500" />
-          <p className="font-semibold">Cholti Gold</p>
+          <FaRegCreditCard className="text-xl md:text-2xl  text-yellow-500" />
+          <p className="font-semibold text-sm md:text-base">Cholti Gold</p>
         </div>
         <div className="flex items-center gap-x-2 mb-2">
-          <FaCreditCard className="text-2xl text-green-600" />
-          <p className="font-semibold">Cholti Premium</p>
+          <FaCreditCard className="text-xl md:text-2xl  text-green-600" />
+          <p className="font-semibold text-sm md:text-base">Cholti Premium</p>
         </div>
         <div className="flex items-center gap-x-2 mb-2">
-          <FaCcVisa className="text-2xl text-blue-600" />
-          <p className="font-semibold">Visa Card</p>
+          <FaCcVisa className="text-xl md:text-2xl  text-blue-600" />
+          <p className="font-semibold text-sm md:text-base">Visa Card</p>
         </div>
         <div className="flex items-center gap-x-2 mb-2">
-          <FaCcMastercard className="text-2xl text-rose-600" />
-          <p className="font-semibold">Master Card</p>
+          <FaCcMastercard className="text-xl md:text-2xl  text-rose-600" />
+          <p className="font-semibold text-sm md:text-base">Master Card</p>
         </div>
       </div>
 

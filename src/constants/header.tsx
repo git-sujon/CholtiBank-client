@@ -20,9 +20,9 @@ export const menuItems = [
     //   title: "Payments",
     //   href: "/payments",
     // },
-    {
-      id: "2",
-      title: "My Account",
-      href: "/login",
-    },
+    // {
+    //   id: "2",
+    //   title: "My Account",
+    //   href: "/login",
+    // },
   ];
