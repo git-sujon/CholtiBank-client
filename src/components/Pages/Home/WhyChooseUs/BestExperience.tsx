@@ -1,17 +1,15 @@
+import OutlineButton from "@/components/UI Elements/Button/OutlineButton";
 import ProgressingBar from "@/components/UI Elements/ProgressingBar";
 import { Button } from "@nextui-org/react";
 import { FaTrophy } from "react-icons/fa";
+import { IoMdOpen } from "react-icons/io";
 const BestExperience = () => {
   return (
     <div className="space-y-5 ">
-      <Button
-        startContent={<FaTrophy className="text-secondary text-xl" />}
-        variant="bordered"
-        color="secondary"
-        className="font-semibold"
-      >
-        Why Choose Us
-      </Button>
+      <OutlineButton
+        title="Why Choose Us"
+        startContent={<FaTrophy className="text-secondary text-xl dark:text-yellow-500 " />}
+      />
       <h1 className="text-3xl md:text-4xl  font-black uppercase ">
         We Commit To Give You The <br />{" "}
         <span className="text-primary">Best Experience</span>
@@ -30,13 +28,12 @@ const BestExperience = () => {
         <ProgressingBar label={"Data Privacy"} value={91} />
         <ProgressingBar label={"Community Trust"} value={86} />
       </div>
-      <Button
-        color="secondary"
-        variant="bordered"
-        className="hover:border-primary"
-      >
-        Free Consultation
-      </Button>
+
+
+      <OutlineButton
+        title="Free Consultation"
+        endContent={<IoMdOpen className="text-secondary text-xl dark:text-yellow-500 " />}
+      />
     </div>
   );
 };

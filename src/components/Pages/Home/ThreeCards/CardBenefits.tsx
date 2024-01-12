@@ -8,6 +8,7 @@ import { FaCcVisa } from "react-icons/fa6";
 import { Button } from "@nextui-org/react";
 import { MdOutlineMore } from "react-icons/md";
 import { CiCreditCard2 } from "react-icons/ci";
+import OutlineButton from "@/components/UI Elements/Button/OutlineButton";
 const CardBenefits = () => {
   return (
     <div>
@@ -49,15 +50,10 @@ const CardBenefits = () => {
         </div>
       </div>
 
-      <Button
+      <OutlineButton
+        title="Learn More"
         endContent={<MdOutlineMore className="text-xl text-secondary" />}
-        size="md"
-        variant="bordered"
-        color="secondary"
-        className=""
-      >
-        Learn More{" "}
-      </Button>
+      />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ListOfBenefits from "./ListOfBenefits";
+import Link from "next/link";
 
 const DownloadTextAndLink = () => {
   return (
@@ -18,18 +19,22 @@ const DownloadTextAndLink = () => {
       <ListOfBenefits />
 
       <div className="flex flex-wrap items-center gap-5 ">
-        <Image
-          src={"/homePage/apple-app-store.png"}
-          width={160}
-          height={80}
-          alt="CholtiBank Apple Store"
-        />
-        <Image
-          src={"/homePage/google-play.png"}
-          width={190}
-          height={110}
-          alt="CholtiBank Google Play Store"
-        />
+        <Link href={"#"}>
+          <Image
+            src={"/homePage/apple-app-store.png"}
+            width={160}
+            height={80}
+            alt="CholtiBank Apple Store"
+          />
+        </Link>
+        <Link href={"#"}>
+          <Image
+            src={"/homePage/google-play.png"}
+            width={190}
+            height={110}
+            alt="CholtiBank Google Play Store"
+          />
+        </Link>
       </div>
     </div>
   );

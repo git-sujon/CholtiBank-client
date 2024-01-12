@@ -8,7 +8,7 @@ const FaqAccordion = () => {
       variant="bordered"
       selectionMode="multiple"
       itemClasses={{
-        title: "text-lg font-bold",
+        title: " font-semibold",
       }}
     >
       {faqData.map((faq) => (

@@ -3,7 +3,7 @@ import CardBenefits from "./CardBenefits";
 
 const ThreeCards = () => {
   return (
-    <div className="pt-20 mx-auto max-w-screen-2xl px-4 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div className="pt-20 mx-auto max-w-screen-2xl px-4 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         <CardBenefits />
       <div className="">
         <Image

@@ -9,7 +9,7 @@ import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gradient-to-r from-gray-100 dark:from-gray-900 via-yellow-100 dark:via-slate-700 to-yellow-200 dark:to-slate-800 mt-20">
+    <footer className=" bg-gradient-to-r from-gray-100 dark:from-gray-900 via-yellow-50 dark:via-slate-700 to-yellow-100 dark:to-slate-800 mt-20">
       <div className=" mx-auto max-w-screen-2xl px-4 lg:px-16  pt-12 pb-5 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -27,7 +27,7 @@ const Footer = () => {
               Discover seamless banking experiences, cutting-edge security, and
               a range of services designed to empower your financial goals.
             </p>
-            <div className="flex mt-8 space-x-6 text-gray-800">
+            <div className="flex mt-8 space-x-6 text-gray-800 dark:text-gray-100">
               <Link
                 href="https://www.linkedin.com/"
                 target="_blank"
@@ -138,10 +138,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 text-sm text-center text-gray-800">
+        <div className="mt-8 text-sm text-center text-gray-800 dark:text-gray-100">
           © 2023{" "}
           <Link
-            className=" font-semibold text-primary"
+            className=" font-bold text-primary dark:text-yellow-500"
             href="https://github.com/git-sujon"
           >
             CholtiBank

@@ -8,11 +8,11 @@ const CurrencyCard = () => {
         {currencyInfo.map((currency) => (
           <Card
             key={currency.id}
-            className="p-4 flex items-center justify-center "
+            className="p-4 flex items-center justify-center bg-transparent border-none shadow-none"
           >
             <div className="text-5xl ">{currency.flag}</div>
 
-            <p className="text-lg font-bold text-secondary">
+            <p className="text-lg font-bold text-secondary dark:text-slate-100">
               {currency.currencyCode}
             </p>
           </Card>

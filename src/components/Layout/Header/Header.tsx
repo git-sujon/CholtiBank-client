@@ -13,24 +13,19 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import Image from "next/image";
 import { ThemeSwitcher } from "@/components/Utility/ThemeSwitcher";
-import { usePathname, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import { getUserInfo, removeUserInfo } from "@/services/auth.services";
 import { authKey } from "@/constants/storageKeys";
 import { IJwtDecoded } from "@/types/user";
 import { menuItems } from "@/constants/header";
-import { useTheme } from "next-themes";
 import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isUserLogged, setIsUserLogged] = useState(false);
 
-  const pathName = usePathname();
   const router = useRouter();
-
-  const { resolvedTheme } = useTheme();
 
   const userInfo = getUserInfo() as IJwtDecoded;
 
@@ -80,21 +75,13 @@ const Header = () => {
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
           <Link href={"/"}>
-            {resolvedTheme === "light" ? (
-              <Image
-                src="/choltiBank.png"
-                alt="CholtiBank"
-                width={200}
-                height={100}
-              />
-            ) : (
-              <Image
-                src="/choltiBank_dark_1.png"
-                alt="CholtiBank"
-                width={200}
-                height={100}
-              />
-            )}
+            <ThemeWiseImageLoader
+              srcLight="/choltiBank.png"
+              srcDark="/choltiBank_dark_1.png"
+              alt="logo"
+              width={150}
+              height={35}
+            />
           </Link>
         </NavbarBrand>
       </NavbarContent>

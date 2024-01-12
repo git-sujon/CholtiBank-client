@@ -9,13 +9,12 @@ const RegisterAccountSteps = () => {
         <br />
         <span className="text-primary">Join Us in a Minute</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
         {registrationStepsData.map((step) => (
           <Card
             key={step.stepNo}
             shadow={"md"}
             radius={"lg"}
-            isHoverable={true}
             className="p-6 rounded-md  border border-slate-300 hover:border-primary  transition-transform transform hover:scale-105"
           >
             <div className="flex items-center justify-center mb-4  text-7xl">

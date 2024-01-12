@@ -1,9 +1,9 @@
 export const menuItems = [
-    {
-      id: "1",
-      title: "Home",
-      href: "/",
-    },
+    // {
+    //   id: "1",
+    //   title: "Home",
+    //   href: "/",
+    // },
     // {
     //   id: "2",
     //   title: "Invest",

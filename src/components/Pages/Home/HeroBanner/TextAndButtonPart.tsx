@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
 import CountNumbers from "./CountNumbers";
-
+import { IoMdOpen } from "react-icons/io";
+import OutlineButton from "@/components/UI Elements/Button/OutlineButton";
 const TextAndButtonPart = () => {
   return (
     <div className="space-y-3 max-w-md ">
@@ -12,13 +13,11 @@ const TextAndButtonPart = () => {
           "Introducing CholtiBank, Bangladesh's pioneer in digital banking innovation. As the country's first digital bank, we are dedicated to transforming your banking experience into a seamless and efficient journey."
         }
       </p>
-      <Button
-        color="secondary"
-        variant="bordered"
-        className="hover:border-primary"
-      >
-        Open Account
-      </Button>
+
+      <OutlineButton
+        title="Open Account"
+        endContent={<IoMdOpen className="text-secondary text-xl dark:text-yellow-500 " />}
+      />
       <CountNumbers />
     </div>
   );
