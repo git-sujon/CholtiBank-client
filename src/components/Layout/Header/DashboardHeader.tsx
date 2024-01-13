@@ -32,6 +32,11 @@ import { getUserInfo, removeUserInfo } from "@/services/auth.services";
 import { IJwtDecoded } from "@/types/user";
 import { authKey } from "@/constants/storageKeys";
 import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
+
+import lightThemeLogo from "@/assets/Navbar/Light/choltiBank.png";
+import darkThemeLogo from "@/assets/Navbar/Dark/choltiBank_dark_1.png";
+
+
 const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const dispatch = useAppDispatch();
@@ -48,13 +53,13 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!userInfo?.userId) {
-      return router.push("/");
+      return router.push("/login");
     }
   }, [userInfo?.userId, router]);
 
   const logoutHandler = () => {
     removeUserInfo(authKey);
-    router.push("/");
+    router.push("/login");
   };
 
   const handleOverlayClick = () => {
@@ -84,9 +89,9 @@ const DashboardHeader = ({ children }: { children: React.ReactNode }) => {
         <NavbarContent className="sm:hidden pr-3" justify="center">
           <NavbarBrand className="flex gap-8 items-center px-6">
           <Link href={"/"}>
-            <ThemeWiseImageLoader
-              srcLight="/choltiBank.png"
-              srcDark="/choltiBank_dark_1.png"
+          <ThemeWiseImageLoader
+              srcLight={lightThemeLogo}
+              srcDark={darkThemeLogo}
               alt="logo"
               width={150}
               height={35}

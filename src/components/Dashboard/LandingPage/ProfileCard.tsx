@@ -48,13 +48,13 @@ const ProfileCard = ({ user }: { user: any }) => {
       </div>
 
       <div className="flex items-center gap-x-1">
-        <FaRegMoneyBillAlt className="text-xl text-secondary mr-2" />
+        <FaRegMoneyBillAlt className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Account Number: </p>
-        <p className="text-gray-600">{accountNumber || ""}</p>
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">{accountNumber || ""}</p>
       </div>
 
       <div className="flex items-center  gap-x-1">
-        <IoMdCalendar className="text-xl text-secondary mr-2" />
+        <IoMdCalendar className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Opening Date: </p>
         <p className="">
           {createdAt ? formatDate(createdAt, "MMMM dd, yyyy") : ""}
@@ -62,40 +62,40 @@ const ProfileCard = ({ user }: { user: any }) => {
       </div>
 
       <div className="flex items-center gap-x-1">
-        <FaMobileAlt className="text-xl text-secondary mr-2" />
+        <FaMobileAlt className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Phone Number: </p>
-        <p className="text-gray-600">{phoneNumber || ""}</p>
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">{phoneNumber || ""}</p>
       </div>
 
       <div className="flex items-center gap-x-1">
-        <FaBirthdayCake className="text-xl text-secondary mr-2" />
+        <FaBirthdayCake className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Date of Birth: </p>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">
           {dateOfBirth ? formatDate(dateOfBirth, "MMMM dd, yyyy") : ""}
         </p>
       </div>
 
       <div className="flex items-center gap-x-1">
-        <FaRegEnvelope className="text-xl text-secondary mr-2" />
+        <FaRegEnvelope className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Email: </p>
-        <p className="text-gray-600">{email || ""}</p>
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">{email || ""}</p>
       </div>
 
       <div className="flex items-center gap-x-1">
         {gender === "Female" ? (
-          <BsGenderFemale className="text-xl text-secondary mr-2" />
+          <BsGenderFemale className=" text-lg md:text-xl text-secondary mr-2" />
         ) : (
-          <BsGenderMale className="text-xl text-secondary mr-2" />
+          <BsGenderMale className=" text-lg md:text-xl text-secondary mr-2" />
         )}
 
         <p className="font-semibold">Gender: </p>
-        <p className="text-gray-600">{gender || ""}</p>
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">{gender || ""}</p>
       </div>
 
       <div className="flex items-center gap-x-1">
-        <PiOfficeChairBold className="text-xl text-secondary mr-2" />
+        <PiOfficeChairBold className=" text-lg md:text-xl text-secondary mr-2" />
         <p className="font-semibold">Occupation: </p>
-        <p className="text-gray-600">{occupation || ""}</p>
+        <p className="text-gray-600 dark:text-grey-100 text-xs md:text-base">{occupation || ""}</p>
       </div>
       <Link
         href={"/dashboard/user/profile"}

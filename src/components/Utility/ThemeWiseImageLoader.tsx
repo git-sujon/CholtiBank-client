@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import LoadingPage from "@/app/loading"
+
 
 const ThemeWiseImageLoader = ({
   srcLight,
@@ -10,22 +10,34 @@ const ThemeWiseImageLoader = ({
   width,
   height,
 }: {
-  srcLight: string;
-  srcDark: string;
+  srcLight: any;
+  srcDark: any;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }) => {
   const { resolvedTheme } = useTheme();
-
-
 
   return (
     <>
       {resolvedTheme === "light" ? (
-        <Image src={srcLight} alt={alt} width={200} height={100} priority={true} placeholder = 'empty'  />
+        <Image
+          src={srcLight}
+          alt={alt}
+          width={200}
+          height={100}
+          priority={true}
+          placeholder="empty"
+        />
       ) : (
-        <Image src={srcDark} alt={alt} width={200} height={100} priority={true} placeholder = 'empty'  />
+        <Image
+          src={srcDark}
+          alt={alt}
+          width={200}
+          height={100}
+          priority={true}
+          placeholder="empty"
+        />
       )}
     </>
   );

@@ -6,6 +6,8 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import ThemeWiseImageLoader from "@/components/Utility/ThemeWiseImageLoader";
+import lightThemeLogo from "@/assets/Navbar/Light/choltiBank.png";
+import darkThemeLogo from "@/assets/Navbar/Dark/choltiBank_dark_1.png";
 
 const Footer = () => {
   return (
@@ -15,8 +17,8 @@ const Footer = () => {
           <div>
             <Link href="#" className="mr-5">
               <ThemeWiseImageLoader
-                srcLight="/choltiBank.png"
-                srcDark="/choltiBank_dark_1.png"
+                srcLight={lightThemeLogo}
+                srcDark={darkThemeLogo}
                 alt="logo"
                 width={150}
                 height={35}
