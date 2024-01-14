@@ -20,16 +20,24 @@ export default function Statements() {
   const [page, setPage] = React.useState(1);
 
   const { data, isLoading } = useGetMyStatementsQuery(undefined);
+  console.log(data?.data);
+  const allData = data?.data;
+  const rowsPerPage = 8;
 
-  if (isLoading) {
+  const pages = Math.ceil(data?.data?.length / rowsPerPage) ?? 0;
+  const items = React.useMemo(() => {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    if (isLoading) {
+      return <LoadingPage />;
+    }
+    return allData.slice(start, end);
+  }, [page, allData, isLoading]);
+
+  console.log("items:", items);
+  if (isLoading || !items) {
     return <LoadingPage />;
   }
-
-  console.log(data?.data);
-
-  const rowsPerPage = 10;
-
-  const pages = data?.data?.length;
 
   const loadingState =
     isLoading || data?.data?.length === 0 ? "loading" : "idle";
@@ -38,6 +46,9 @@ export default function Statements() {
     <div>
       <Table
         aria-label="Example table with client async pagination"
+        classNames={{
+          thead: "bg-secondary",
+        }}
         bottomContent={
           pages > 0 ? (
             <div className="flex w-full justify-center">
@@ -60,7 +71,7 @@ export default function Statements() {
           <TableColumn key={"deposit"}>Amount</TableColumn>
         </TableHeader>
         <TableBody
-          items={data?.data ?? []}
+          items={items ?? []}
           loadingContent={<Spinner />}
           loadingState={loadingState}
         >
@@ -68,14 +79,18 @@ export default function Statements() {
             <TableRow key={item.transactionId}>
               {(columnKey) => (
                 <TableCell>
-                  {columnKey === "deposit"
-                    ? item.deposit?.amount
-                    : columnKey === "withdrawal"
-                    ? item.withdrawal?.amount
-                    : columnKey === "transfer"
-                    ? item.transfer?.amount
-                    : columnKey === "mobileRecharge"
-                    ? item.mobileRecharge?.amount
+                  {columnKey === "withdrawal" ||
+                  columnKey === "deposit" ||
+                  columnKey === "transfer" ||
+                  columnKey === "mobileRecharge"
+                    ? [
+                        item?.withdrawal?.amount,
+                        item?.deposit?.amount,
+                        item?.transfer?.amount,
+                        item?.mobileRecharge?.amount,
+                      ]
+                        .filter((amount) => amount !== undefined)
+                        .reduce((total, amount) => total + amount, 0)
                     : item[columnKey]}
                 </TableCell>
               )}
