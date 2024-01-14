@@ -1,17 +1,39 @@
 import { Select, SelectItem } from "@nextui-org/react";
-import React from "react";
 
-const ReusableSelect = ({ items }:{ items:any }) => {
+const ReusableSelect = ({
+  items,
+  label,
+  placeholder,
+  value,
+  setValue,
+}: {
+  items: any;
+  label: string;
+  placeholder: string;
+  value:any
+  setValue:any
+}) => {
+  const handleSelectionChange = (e:any) => {
+    setValue(e.target.value);
+  };
+
   return (
     <div>
-      {/* <Select
-      items={items}
-      label="Favorite Animal"
-      placeholder="Select an animal"
-      className="max-w-xs"
-    >
-      {(source) => <SelectItem key={source.value}>{source.label}</SelectItem>}
-    </Select> */}
+      <Select
+        items={items}
+        label={label}
+        placeholder={placeholder}
+        className="max-w-xs"
+        size="sm"
+        color="secondary"
+        radius="none"
+        selectedKeys={[value]}
+        onChange={handleSelectionChange}
+      >
+        {(source: any) => (
+          <SelectItem key={source.value}>{source.label}</SelectItem>
+        )}
+      </Select>
     </div>
   );
 };
