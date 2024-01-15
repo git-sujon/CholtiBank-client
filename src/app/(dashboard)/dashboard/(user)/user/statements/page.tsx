@@ -53,7 +53,7 @@ export default function Statements() {
 
   return (
     <>
-    {/* <TransactionDetails transaction={selectedTransaction} /> */}
+    
       <TransactionModel
         isOpen={isOpen}
         onOpen={onOpen}
