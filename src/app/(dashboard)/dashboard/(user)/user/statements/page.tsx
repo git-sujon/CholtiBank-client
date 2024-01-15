@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableHeader,
@@ -11,16 +11,20 @@ import {
   Pagination,
   Spinner,
   getKeyValue,
+  useDisclosure,
 } from "@nextui-org/react";
 
 import { useGetMyStatementsQuery } from "@/redux/api/transactionApi";
 import LoadingPage from "@/app/loading";
+import TransactionModel from "@/components/common/Modal/TransactionModel";
+
 
 export default function Statements() {
   const [page, setPage] = React.useState(1);
+  const [selectedTransaction, setSelectedTransaction] = useState(null);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const { data, isLoading } = useGetMyStatementsQuery(undefined);
-  console.log(data?.data);
   const allData = data?.data;
   const rowsPerPage = 8;
 
@@ -34,7 +38,7 @@ export default function Statements() {
     return allData.slice(start, end);
   }, [page, allData, isLoading]);
 
-  console.log("items:", items);
+  // console.log("items:", items);
   if (isLoading || !items) {
     return <LoadingPage />;
   }
@@ -42,21 +46,46 @@ export default function Statements() {
   const loadingState =
     isLoading || data?.data?.length === 0 ? "loading" : "idle";
 
+  const handleDetailsClick = (transaction: any) => {
+    setSelectedTransaction(transaction);
+    onOpen();
+  };
+
   return (
-    <div>
+    <>
+    {/* <TransactionDetails transaction={selectedTransaction} /> */}
+      <TransactionModel
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onOpenChange={onOpenChange}
+        data={selectedTransaction}
+      />
       <Table
         aria-label="Example table with client async pagination"
         classNames={{
-          thead: "bg-secondary",
+          base: " rounded-none border-none  shadow-none",
+          thead: " rounded-none ",
+          table: " rounded-none border-none  shadow-none",
+          th: "bg-gradient-to-b  from-primary-500 to-primary-800 dark:from-primary-300 dark:to-primary-100 text-white font-bold rounded-none",
+          wrapper: "rounded-none border-none  shadow-none",
+          tr: "border-b rounded-none",
+          td: "border rounded-none",
         }}
         bottomContent={
           pages > 0 ? (
-            <div className="flex w-full justify-center">
+            <div className="flex w-full justify-center rounded-none">
               <Pagination
+                classNames={{
+                  wrapper:
+                    "gap-0 overflow-visible h-8 rounded border border-divider rounded-none",
+                  item: "w-8 h-8 text-small rounded-none bg-transparent ",
+                  cursor:
+                    "bg-gradient-to-b  from-primary-500 to-primary-800 dark:from-primary-300 dark:to-primary-100 text-white font-bold rounded-none",
+                }}
                 isCompact
                 showControls
                 showShadow
-                color="primary"
+                color="secondary"
                 page={page}
                 total={pages}
                 onChange={(page) => setPage(page)}
@@ -65,10 +94,11 @@ export default function Statements() {
           ) : null
         }
       >
-        <TableHeader>
+        <TableHeader className="bg-secondary">
           <TableColumn key={"transactionId"}>TransactionId</TableColumn>
           <TableColumn key={"transactionType"}>Type</TableColumn>
           <TableColumn key={"deposit"}>Amount</TableColumn>
+          <TableColumn key={""}>Actions</TableColumn>
         </TableHeader>
         <TableBody
           items={items ?? []}
@@ -92,12 +122,21 @@ export default function Statements() {
                         .filter((amount) => amount !== undefined)
                         .reduce((total, amount) => total + amount, 0)
                     : item[columnKey]}
+
+                  {columnKey === "" && (
+                    <button
+                      onClick={() => handleDetailsClick(item)}
+                      className="text-blue-500 hover:underline focus:outline-none"
+                    >
+                      Details
+                    </button>
+                  )}
                 </TableCell>
               )}
             </TableRow>
           )}
         </TableBody>
       </Table>
-    </div>
+    </>
   );
 }
