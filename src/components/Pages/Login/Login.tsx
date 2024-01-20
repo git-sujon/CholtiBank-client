@@ -14,21 +14,22 @@ import { getUserInfo, storeUserInfo } from "@/services/auth.services";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import ReusableInput from "@/components/Forms/ReusableInput";
+import FriendlyCaptcha from "@/components/Forms/captcha/FriendlyCaptcha";
 const Login = () => {
   const [userLogin, { isLoading }] = useUserLoginMutation();
   const [isVisible, setIsVisible] = useState(false);
+  const [captchaCode, setCaptchaCode] = useState("");
+
   const router = useRouter();
   const toggleVisibility = () => setIsVisible(!isVisible);
   const [errorMessage, setErrorMessage] = useState("");
   const { role } = getUserInfo() as IJwtDecoded;
 
-useEffect(()=>{
-  if(role){
-    router.push(`/dashboard/${role}`);
-  }
-
-}, [role,router])
-
+  useEffect(() => {
+    if (role) {
+      router.push(`/dashboard/${role}`);
+    }
+  }, [role, router]);
 
   const loginHandler = async (e: any) => {
     e.preventDefault();
@@ -39,6 +40,10 @@ useEffect(()=>{
       password,
     };
 
+    if (!captchaCode) {
+      return setErrorMessage("Complete the captcha first");
+    }
+
     try {
       const response = await userLogin(data).unwrap();
       if (response?.data) {
@@ -47,7 +52,6 @@ useEffect(()=>{
         if (isLoading) {
           return <LoadingPage />;
         }
-  
 
         router.push(`/dashboard/${role}`);
       }
@@ -104,6 +108,7 @@ useEffect(()=>{
           isInvalid={errorMessage ? true : false}
           errorMessage={errorMessage}
         />
+        <FriendlyCaptcha setCaptchaCode={setCaptchaCode} />
         <Button
           type="submit"
           className="text-white w-full"

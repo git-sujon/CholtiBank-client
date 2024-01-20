@@ -1,6 +1,6 @@
 "use client";
 
-import OpenAccount from "@/components/Pages/OpenAccount/OpenAccount2";
+import OpenAccount from "@/components/Pages/OpenAccount/OpenAccount";
 // OpenAccountPage.tsx
 import { Button, Divider, Input } from "@nextui-org/react";
 import Link from "next/link";

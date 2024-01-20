@@ -16,12 +16,13 @@ import LoadingPage from "@/app/loading";
 import { getUserInfo, storeUserInfo } from "@/services/auth.services";
 import toast from "react-hot-toast";
 import { IJwtDecoded } from "@/types/user";
+import FriendlyCaptcha from "@/components/Forms/captcha/FriendlyCaptcha";
 const OpenAccount = () => {
   const [userSignUp, { isLoading }] = useUserSignUpMutation();
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isVisiblePin, setIsVisiblePin] = useState(false);
-
+  const [captchaCode, setCaptchaCode] = useState("");
   const toggleVisibility = () => setIsVisible(!isVisible);
   const toggleVisibilityPin = () => setIsVisiblePin(!isVisiblePin);
   const [errorMessage, setErrorMessage] = useState("");
@@ -51,6 +52,10 @@ const OpenAccount = () => {
       password,
       pin,
     };
+
+    if (!captchaCode) {
+      return setErrorMessage("Complete the captcha first");
+    }
 
     try {
       const response = await userSignUp(data).unwrap();
@@ -179,7 +184,7 @@ const OpenAccount = () => {
         isInvalid={errorMessage ? true : false}
         errorMessage={errorMessage}
       />
-
+      <FriendlyCaptcha setCaptchaCode={setCaptchaCode} />
       <Button
         type="submit"
         className="text-white w-full"

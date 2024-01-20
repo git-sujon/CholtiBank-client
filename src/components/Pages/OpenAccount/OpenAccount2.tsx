@@ -22,7 +22,7 @@ import { MdOutlineSkipPrevious } from "react-icons/md";
 import { MdOutlineSkipNext } from "react-icons/md";
 
 
-const OpenAccount = () => {
+const OpenAccount2 = () => {
   const [userSignUp, { isLoading }] = useUserSignUpMutation();
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +104,7 @@ const OpenAccount = () => {
       <Tabs
         aria-label="Tabs form"
         selectedKey={selected}
-        onSelectionChange={setSelected}
+        // onSelectionChange={setSelected}
         variant="underlined"
         radius="none"
       >
@@ -257,4 +257,4 @@ const OpenAccount = () => {
   );
 };
 
-export default OpenAccount;
+export default OpenAccount2;
