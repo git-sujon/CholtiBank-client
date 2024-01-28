@@ -8,7 +8,13 @@ const ManageMoney = () => {
         <br />
         You Manage Your Money Efficiently
       </h1>
-      <div className="flex justify-center items-center max-auto py-10">
+      <div
+        className="flex justify-center items-center max-auto py-10"
+        data-aos="zoom-in-up"
+        data-aos-offset="0"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="2000"
+      >
         <Image
           src="/homePage/manage_money.png"
           width={900}

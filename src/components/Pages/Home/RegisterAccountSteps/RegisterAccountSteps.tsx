@@ -17,14 +17,21 @@ const RegisterAccountSteps = () => {
             radius={"lg"}
             className="p-6 rounded-md  border border-slate-300 hover:border-primary  transition-transform transform hover:scale-105"
           >
-            <div className="flex items-center justify-center mb-4  text-7xl">
-              {step.icon}
-            </div>
-            <div className="text-xl font-bold mb-2 text-center">
-              {step.stepName}
-            </div>
-            <div className="text-sm text-gray-900 dark:text-gray-50 text-center">
-              {step.description}
+            <div
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1500"
+            >
+              <div className="flex items-center justify-center mb-4  text-7xl">
+                {step.icon}
+              </div>
+              <div className="text-xl font-bold mb-2 text-center">
+                {step.stepName}
+              </div>
+              <div className="text-sm text-gray-900 dark:text-gray-50 text-center">
+                {step.description}
+              </div>
             </div>
           </Card>
         ))}

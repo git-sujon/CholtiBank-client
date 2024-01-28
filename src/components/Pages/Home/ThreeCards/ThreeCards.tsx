@@ -6,7 +6,7 @@ const ThreeCards = () => {
     <div className="pt-20 mx-auto max-w-screen-2xl px-4 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
       <div
         data-aos="zoom-in-right"
-        data-aos-offset="300"
+       
         data-aos-easing="linear"
         data-aos-duration="500"
       >
@@ -15,7 +15,7 @@ const ThreeCards = () => {
       <div
         className=""
         data-aos="zoom-in-left"
-        data-aos-offset="300"
+       
         data-aos-easing="linear"
         data-aos-duration="500"
       >

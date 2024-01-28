@@ -15,16 +15,14 @@ const HomePage = () => {
       <WhyChooseUs />
       <div
         data-aos="zoom-in-up"
-        data-aos-offset="300"
-        data-aos-easing="linear"
+        data-aos-easing="ease-in-out"
         data-aos-duration="500"
       >
         <Features />
       </div>
       <div
         data-aos="zoom-in-up"
-        data-aos-offset="300"
-        data-aos-easing="linear"
+        data-aos-easing="ease-in-out"
         data-aos-duration="500"
       >
         <ManageMoney />
@@ -33,17 +31,15 @@ const HomePage = () => {
       <ThreeCards />
       <div
         data-aos="zoom-in-up"
-        data-aos-offset="300"
-        data-aos-easing="linear"
+        data-aos-easing="ease-in-out"
         data-aos-duration="500"
       >
         <RegisterAccountSteps />
       </div>
       <DownloadApp />
       <div
-        data-aos="zoom-out-up"
-        data-aos-offset="300"
-        data-aos-easing="linear"
+          data-aos="zoom-in-up"
+        data-aos-easing="ease-in-out"
         data-aos-duration="500"
       >
         <FAQ />

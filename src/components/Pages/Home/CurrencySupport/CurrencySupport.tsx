@@ -5,7 +5,6 @@ const CurrencySupport = () => {
     <div
       className="pt-20 mx-auto max-w-screen-2xl px-4 lg:px-16 md:grid md:grid-cols-6 space-x-5 space-y-5 items-center"
       data-aos="fade-right"
-      data-aos-offset="300"
       data-aos-easing="linear"
       data-aos-duration="500"
     >
@@ -23,7 +22,7 @@ const CurrencySupport = () => {
       <div
         className="md:col-span-4"
         data-aos="fade-left"
-        data-aos-offset="300"
+
         data-aos-easing="linear"
         data-aos-duration="500"
       >
