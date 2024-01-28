@@ -8,7 +8,9 @@ const BestExperience = () => {
     <div className="space-y-5 ">
       <OutlineButton
         title="Why Choose Us"
-        startContent={<FaTrophy className="text-secondary text-xl dark:text-yellow-500 " />}
+        startContent={
+          <FaTrophy className="text-secondary text-xl dark:text-yellow-500 " />
+        }
       />
       <h1 className="text-3xl md:text-4xl  font-black uppercase ">
         We Commit To Give You The <br />{" "}
@@ -20,19 +22,75 @@ const BestExperience = () => {
         }
       </p>
       <div className="flex flex-col gap-y-2">
-        <ProgressingBar label={"Customer Services"} value={95} />
-        <ProgressingBar label={"Client Satisfaction"} value={85} />
-        <ProgressingBar label={"Digital Security"} value={90} />
-        <ProgressingBar label={"Innovation"} value={80} />
-        <ProgressingBar label={"Financial Transparency"} value={92} />
-        <ProgressingBar label={"Data Privacy"} value={91} />
-        <ProgressingBar label={"Community Trust"} value={86} />
-      </div>
+        <div
+          data-aos="fade-left"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Customer Services"} value={95} />
+        </div>
 
+        <div
+          data-aos="fade-right"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Client Satisfaction"} value={85} />
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Digital Security"} value={90} />
+        </div>
+
+        <div
+          data-aos="fade-right"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Innovation"} value={80} />
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Financial Transparency"} value={92} />
+        </div>
+
+        <div
+          data-aos="fade-right"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Data Privacy"} value={91} />
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1500"
+        >
+          <ProgressingBar label={"Community Trust"} value={86} />
+        </div>
+      </div>
 
       <OutlineButton
         title="Free Consultation"
-        endContent={<IoMdOpen className="text-secondary text-xl dark:text-yellow-500 " />}
+        endContent={
+          <IoMdOpen className="text-secondary text-xl dark:text-yellow-500 " />
+        }
       />
     </div>
   );

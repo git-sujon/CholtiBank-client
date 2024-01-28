@@ -3,7 +3,13 @@
 import CountUp from "react-countup";
 const CountNumbers = () => {
   return (
-    <div className="flex items-center gap-x-5">
+    <div
+      className="flex items-center gap-x-5"
+      data-aos="fade-right"
+      data-aos-offset="0"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1500"
+    >
       {/* single count */}
       <div className="flex flex-col">
         <div className="font-black text-secondary dark:text-slate-100  text-2xl md:text-4xl flex items-center ">
