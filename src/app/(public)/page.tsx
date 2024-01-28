@@ -13,14 +13,41 @@ const HomePage = () => {
     <>
       <HeroBanner />
       <WhyChooseUs />
-      <Features />
-      <ManageMoney />
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="300"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
+        <Features />
+      </div>
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="300"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
+        <ManageMoney />
+      </div>
       <CurrencySupport />
       <ThreeCards />
-      <RegisterAccountSteps />
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="300"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
+        <RegisterAccountSteps />
+      </div>
       <DownloadApp />
-      <FAQ />
-
+      <div
+        data-aos="zoom-out-up"
+        data-aos-offset="300"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
+        <FAQ />
+      </div>
     </>
   );
 };
