@@ -14,7 +14,11 @@ const Footer = () => {
     <footer className=" bg-gradient-to-r from-gray-100 dark:from-gray-900 via-yellow-50 dark:via-slate-700 to-yellow-100 dark:to-slate-800 mt-20">
       <div className=" mx-auto max-w-screen-2xl px-4 lg:px-16  pt-12 pb-5 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div>
+          <div
+            data-aos="zoom-in-right"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+          >
             <Link href="#" className="mr-5">
               <ThemeWiseImageLoader
                 srcLight={lightThemeLogo}
@@ -73,7 +77,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 gap-8 col-span-2 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
+            <div
+              data-aos="zoom-in-down"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+            >
               <p className="font-medium">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm ">
                 <Link className="hover:opacity-75" href="#">
@@ -90,7 +98,11 @@ const Footer = () => {
                 </Link>
               </nav>
             </div>
-            <div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+            >
               <p className="font-medium">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm ">
                 <Link className="hover:opacity-75" href="#">
@@ -107,7 +119,11 @@ const Footer = () => {
                 </Link>
               </nav>
             </div>
-            <div>
+            <div
+              data-aos="zoom-in-down"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+            >
               <p className="font-medium">Helpful Links</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm ">
                 <Link className="hover:opacity-75" href="#">
@@ -121,7 +137,11 @@ const Footer = () => {
                 </Link>
               </nav>
             </div>
-            <div>
+            <div
+              data-aos="zoom-in-left"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+            >
               <p className="font-medium">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm ">
                 <Link className="hover:opacity-75" href="#">
@@ -140,7 +160,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 text-sm text-center text-gray-800 dark:text-gray-100">
+        <div
+          className="mt-8 text-sm text-center text-gray-800 dark:text-gray-100"
+         
+        >
           © 2023{" "}
           <Link
             className=" font-bold text-primary dark:text-yellow-500"
