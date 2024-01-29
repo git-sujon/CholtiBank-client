@@ -23,7 +23,7 @@ const BestExperience = () => {
       </p>
       <div className="flex flex-col gap-y-2">
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -32,7 +32,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -41,7 +41,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -50,7 +50,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -59,7 +59,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -68,7 +68,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
@@ -77,7 +77,7 @@ const BestExperience = () => {
         </div>
 
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-offset="50"
           data-aos-easing="ease-in-out"
           data-aos-duration="1500"
