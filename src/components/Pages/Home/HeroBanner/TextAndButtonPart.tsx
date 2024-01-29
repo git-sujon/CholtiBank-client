@@ -31,6 +31,7 @@ const TextAndButtonPart = () => {
         endContent={
           <IoMdOpen className="text-secondary text-xl dark:text-yellow-500 " />
         }
+        href="/open-account"
       />
       <CountNumbers />
     </div>
