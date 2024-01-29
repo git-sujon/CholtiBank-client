@@ -6,8 +6,12 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Provider } from "react-redux";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export function Providers({ children }: { children: React.ReactNode }) {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Provider store={store}>
       <NextUIProvider>
