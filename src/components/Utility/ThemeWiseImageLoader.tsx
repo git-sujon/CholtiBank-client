@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 
 const ThemeWiseImageLoader = ({
@@ -17,10 +18,15 @@ const ThemeWiseImageLoader = ({
   height?: number;
 }) => {
   const { resolvedTheme } = useTheme();
+  const [theme, setTheme] = useState("light")
+
+  useEffect(()=> {
+    setTheme(resolvedTheme!)
+  }, [resolvedTheme])
 
   return (
     <>
-      {resolvedTheme === "light" ? (
+      {theme === "light" ? (
         <Image
           src={srcLight}
           alt={alt}

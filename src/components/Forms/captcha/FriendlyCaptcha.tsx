@@ -39,7 +39,7 @@ const FriendlyCaptcha = ({ setCaptchaCode }: { setCaptchaCode: any }) => {
       //@ts-expect-error
       ref={container}
       className={`frc-captcha  max-w-full ${resolvedTheme}`}
-      data-sitekey={process.env.FRIENDLY_CAPTCHA}
+      data-sitekey={process.env.NEXT_PUBLIC_FRIENDLY_CAPTCHA}
     />
   );
 };
