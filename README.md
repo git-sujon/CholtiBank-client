@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CholtiBank - Digital Banking Platform
 
-## Getting Started
+CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking experience by providing a range of online services that were traditionally confined to physical branches. This project aims to digitize and streamline various banking processes, offering customers the convenience of accessing financial services from the comfort of their homes.
 
-First, run the development server:
+## Services/Major Functionalities
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Open Bank Account:**
+   - Types: Checking, Savings accounts, Money market, non-resident account.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Deposit Money:**
+   - From any bank
+   - From Visa/Master Card
+   - ATM
+   - From Agent
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Withdraw Money:**
+   - From ATM
+   - From Agent/Cholti Agent Account
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Money Transfer:**
+   - Cholti to Cholti
+   - Cash by code
+   - BKash
+   - Nagad
+   - Prepaid Card
+   - Binimoy
 
-## Learn More
+5. **Mobile Recharge:**
+   - Grameenphone, Robi, Airtel, Banglalink, Teletalk
 
-To learn more about Next.js, take a look at the following resources:
+6. **All Card:**
+   - Credit Card
+   - Debit Card
+   - Cholti Plus
+   - Cholti Gold
+   - Cholti Premium
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+7. **Payment:**
+   - By QR Code
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+8. **Bill Payment:**
+   - Water bill
+   - Electricity bill
 
-## Deploy on Vercel
+9. **Buy Tickets**
+10. **Request Money**
+11. **Receive Remittance**
+12. **Statements**
+    - a. Usual
+      - For Self
+      - For Children
+      - For Family
+    - b. Fixed Deposit
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+14. **Loan:**
+    - Personal Loan
+    - Home Loan
+    - Student Loan
+    - Tour Loan
+    - Bike Loan
+    - Car Loan
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+15. **Investment Services**
+16. **Customer Support**
+17. **Fixed Deposit Calculator**
+18. **Exchange Rates Conversion**
+19. **User Devices Information**
+
+## Roles
+
+- Customer
+- Admin
+- Manager
+- Loan Officer
+- Customer Service Representative
+
+
