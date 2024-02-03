@@ -34,12 +34,23 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 
 ## Features
 
-- 💡 Light/dark mode toggle
+- 🔒 Highly Secure
+- 🎨 Customizable Themes
 - 📱 Fully Responsive
 - ✨ Beautiful Animations
 - 💬 Interactive Messages
 - 📢 Real-time Notifications
 - 🔄 Dynamic Slides
+- 📈 Performance Optimized
+- 🚀 Fast Loading Times
+- 📱 Responsive Images
+- 🎨 Customizable Themes
+- 🌐 SEO Friendly
+- 🛡️ CSRF Protection
+- 📜 Detailed Documentation
+- 🔄 Version Control (Git)
+- 📦 Easy Installation🚫 
+- 🚦 Error Handling
 
 ## Services/Major Functionalities
 
@@ -72,7 +83,8 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 
    - Grameenphone, Robi, Airtel, Banglalink, Teletalk
 
-6. **All Card:**
+6. **Statements**
+<!-- 6. **All Card:**
 
    - Credit Card
    - Debit Card
@@ -113,7 +125,7 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 15. **Customer Support**
 16. **Fixed Deposit Calculator**
 17. **Exchange Rates Conversion**
-18. **User Devices Information**
+18. **User Devices Information** -->
 
 ## Color Reference
 
