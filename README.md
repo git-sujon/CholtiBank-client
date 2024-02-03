@@ -14,7 +14,6 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 
 <!-- ### Dashboard
 ![Home Page](https://i.ibb.co/Zh0K9SG/image.png) -->
-
 ## Tech Stack 🛠
 
 | Tech                                                                                                                          | Docs                                                                       | Description                                                                                                      |
@@ -31,6 +30,13 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 | <img src="https://img.shields.io/badge/-Swiper-blue?logo=swiper&style=for-the-badge" width="100" height="30">                 | [Swiper](https://swiperjs.com/get-started)                                 | A modern touch slider with hardware-accelerated transitions and native-like behavior                             |
 | <img src="https://img.shields.io/badge/-Tailwind_CSS-lightblue?logo=tailwindcss&style=for-the-badge" width="100" height="30"> | [Tailwind CSS](https://tailwindcss.com/docs)                               | A utility-first CSS framework for rapidly building custom user interfaces                                        |
 | <img src="https://img.shields.io/badge/-TypeScript-blue?logo=typescript&style=for-the-badge" width="100" height="30">         | [TypeScript](https://www.typescriptlang.org/docs/)                         | A typed superset of JavaScript that compiles to plain JavaScript                                                 |
+| <img src="https://img.shields.io/badge/-aos-lightgrey?logo=aos&style=for-the-badge" width="100" height="30">                   | [aos](https://github.com/michalsnik/aos)                                   | A library to animate elements as you scroll down, with smooth and beautiful animations                          |
+| <img src="https://img.shields.io/badge/-axios-purple?logo=axios&style=for-the-badge" width="100" height="30">                 | [axios](https://axios-http.com/docs/intro)                                | A promise-based HTTP client for the browser and Node.js                                                           |
+| <img src="https://img.shields.io/badge/-clsx-yellow?logo=clsx&style=for-the-badge" width="100" height="30">                   | [clsx](https://github.com/lukeed/clsx)                                   | A tiny utility for constructing className strings conditionally                                                 |
+| <img src="https://img.shields.io/badge/-framer_motion-blue?logo=framer&style=for-the-badge" width="100" height="30">          | [framer-motion](https://www.framer.com/docs/)                            | A production-ready motion library for React                                                                      |
+| <img src="https://img.shields.io/badge/-friendly_challenge-yellow?logo=challenge&style=for-the-badge" width="100" height="30"> | [friendly-challenge](https://friendlycaptcha.com/docs/intro)              | A user-friendly captcha service for your web applications                                                        |
+| <img src="https://img.shields.io/badge/-jwt_decode-green?logo=jwt&style=for-the-badge" width="100" height="30">              | [jwt-decode](https://www.npmjs.com/package/jwt-decode)                   | A library to decode JWTs (JSON Web Tokens)                                                                       |
+| <img src="https://img.shields.io/badge/-next_themes-black?logo=next.js&style=for-the-badge" width="100" height="30">          | [next-themes](https://github.com/pacocoursey/next-themes)               | A library for managing themes in Next.js applications                                                            |
 
 ## Features
 
