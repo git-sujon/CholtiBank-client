@@ -9,8 +9,8 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 ## Screenshots
 ### Home Page
 ![Home Page](https://i.ibb.co/rt5rKVC/image.png)
-### Dashboard
-![Home Page](https://i.ibb.co/Zh0K9SG/image.png)
+<!-- ### Dashboard
+![Home Page](https://i.ibb.co/Zh0K9SG/image.png) -->
 
 ## Tech Stack 🛠
 
@@ -31,12 +31,12 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 
 ## Features
 
-- Light/dark mode toggle
-- Fully Responsive 
-- Beautiful Animations
-- Interactive Messages
-- Real-time Notifications
-- Dynamic Slides
+- 💡 Light/dark mode toggle
+- 📱 Fully Responsive 
+- ✨ Beautiful Animations
+- 💬 Interactive Messages
+- 📢 Real-time Notifications
+- 🔄 Dynamic Slides
 
 ## Services/Major Functionalities
 
@@ -101,3 +101,13 @@ CholtiBank is the first digital bank in Bangladesh, revolutionizing the banking 
 17. **Fixed Deposit Calculator**
 18. **Exchange Rates Conversion**
 19. **User Devices Information**
+
+
+## Color Reference
+
+| Color      | Hex Code   | Preview                                      |
+|------------|------------|----------------------------------------------|
+| Primary    | #ff9100    | ![Primary Color](https://via.placeholder.com/50x30/ff9100/ffffff?text=+)    |
+| Secondary  | #04185C    | ![Secondary Color](https://via.placeholder.com/50x30/04185C/ffffff?text=+)  |
+
+
